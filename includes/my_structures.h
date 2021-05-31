@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_shell.c                                         :+:      :+:    :+:   */
+/*   my_structures.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/05/29 14:32:40 by bhatches         ###   ########.fr       */
+/*   Created: 2021/05/31 15:27:26 by bhatches          #+#    #+#             */
+/*   Updated: 2021/05/31 15:30:24 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_shell.h"
+#ifndef MY_STUCTURES_H
+# define MY_STUCTURES_H
 
-int	my_shell(t_shell *prmtrs)
+# include "libft.h"
+
+typedef struct  s_shell
 {
-	
-	return (0);
-}
+    /* data */
+}               t_shell;
+
+#endif

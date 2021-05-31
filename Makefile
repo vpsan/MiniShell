@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/05/29 15:56:27 by bhatches         ###   ########.fr        #
+#    Updated: 2021/05/31 15:27:05 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ MAIN		= 	$(MAIN_DIR)main.c
 INCLD 	= 	includes/
 HDRS	=	$(INCLD)libft.h\
 			$(INCLD)get_next_line.h\
+			$(INCLD)my_structures.h\
 			$(INCLD)my_errors.h\
 			$(INCLD)prsng_vldtn.h\
 			$(INCLD)my_shell.h\

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:56:31 by bhatches          #+#    #+#             */
-/*   Updated: 2021/05/29 14:28:53 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/05/31 15:27:49 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 # define PRSNG_VLDTN_H
 
 # include "libft.h"
-
-typedef struct  s_shell
-{
-    /* data */
-}               t_shell;
+# include "my_structures.h"
 
 int		prsng_vldtn(t_shell *prmtrs);
 
