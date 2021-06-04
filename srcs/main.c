@@ -25,7 +25,8 @@ int	main(int argc, char **argv)
 	prsng_vldtn(&prmtrs);
 	my_shell(&prmtrs);
 	my_errors();
-	
+	pwd();
+	echo("-nnnnnn hello", 1);
 	printf("Everything normal\n");
 	return (0);
 }

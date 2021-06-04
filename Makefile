@@ -68,11 +68,14 @@ PRSNG_VLDTN			=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 
 MY_SHELL_DIR		= 	srcs/my_shell/
 MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
-#						$(MY_SHELL_DIR)your_function_1.c\
+						$(MY_SHELL_DIR)builtins/pwd.c\
+						$(MY_SHELL_DIR)builtins/echo.c\
 #						$(MY_SHELL_DIR)your_function_2.c\
 #						etc
 
 # ***************************************************************************** #
+
+
 
 OBJ		=	$(SRCS:.c=.o)
 

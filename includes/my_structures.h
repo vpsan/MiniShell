@@ -18,6 +18,7 @@
 typedef struct  s_shell
 {
     /* data */
+
 }               t_shell;
 
 #endif

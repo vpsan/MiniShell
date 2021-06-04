@@ -16,10 +16,13 @@
 # include "libft.h"
 # include "my_structures.h"
 
-int		my_shell(t_shell *prtmtrs);
+# include <string.h>
+# include <errno.h>
 
-/*
-**      other functions goes here
-*/
+# define ERROR -1
+
+int		my_shell(t_shell *prtmtrs);
+int		pwd(void);
+int		echo(char *c_arg, int fd);
 
 #endif
