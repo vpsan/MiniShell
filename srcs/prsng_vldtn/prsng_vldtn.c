@@ -12,26 +12,8 @@
 
 #include "prsng_vldtn.h"
 
-void	prsng_vldtn(t_shell *prmtrs)
+int	prsng_vldtn(t_main *prmtrs)
 {
-	char	buf[2];
-	int		n; 
-	int		count;
-
-	count = 1;
-	n = 0;
-	write(1, "vpsan>", 6);
-	while (count)
-	{
-
-		count = (int) read(0, &buf, 1);
-		buf[1] = '\0';
-		if (*buf == '\n')
-		{
-			///отправляемся в путешествие, если встретили '\n'
-			ft_find_n(prmtrs, buf);
-		}
-		else
-			break;///вызов функции если не встретили '\n'
-	}
+	
+	return (0);
 }
