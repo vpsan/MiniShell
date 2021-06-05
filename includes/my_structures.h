@@ -15,10 +15,32 @@
 
 # include "libft.h"
 
+typedef struct  s_prsng
+{
+
+}               t_prsng;
+
+typedef struct  s_cmd
+{
+	char 	*cmnd_str;
+	char 	*cmnd_words;
+//	t_flag	flgs;
+//	file
+//	input and output of	cmd;
+}               t_cmd;
+
 typedef struct  s_shell
 {
-    /* data */
 
 }               t_shell;
+
+typedef struct  s_main
+{
+	t_list		*env_var;
+	char 		*input;
+	t_prsng		prsng;
+	t_cmd		*cmnds;
+	t_shell		shell;
+}               t_main;
 
 #endif

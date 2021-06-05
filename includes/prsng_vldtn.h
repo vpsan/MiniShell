@@ -16,7 +16,7 @@
 # include "libft.h"
 # include "my_structures.h"
 
-int		prsng_vldtn(t_shell *prmtrs);
+int		prsng_vldtn(t_main *prmtrs);
 
 /*
 **      other functions goes here

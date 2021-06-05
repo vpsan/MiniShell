@@ -12,7 +12,7 @@
 
 #include "prsng_vldtn.h"
 
-int	prsng_vldtn(t_shell *prmtrs)
+int	prsng_vldtn(t_main *prmtrs)
 {
 	
 	return (0);

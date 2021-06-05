@@ -20,7 +20,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_shell	prmtrs;
+	t_main	prmtrs;
 
 	prsng_vldtn(&prmtrs);
 	my_shell(&prmtrs);

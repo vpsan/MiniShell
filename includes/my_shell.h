@@ -21,7 +21,7 @@
 
 # define ERROR -1
 
-int		my_shell(t_shell *prtmtrs);
+int		my_shell(t_main *prtmtrs);
 int		pwd(void);
 int		echo(char *c_arg, int fd);
 
