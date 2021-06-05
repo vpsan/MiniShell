@@ -12,7 +12,7 @@
 
 #include "my_shell.h"
 
-int	my_shell(t_main *prmtrs)
+int	my_shell(t_shell *prmtrs)
 {
 	
 	return (0);
