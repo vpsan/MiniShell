@@ -6,17 +6,19 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/05/31 15:27:05 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/06 14:09:03 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
 
 SRCS	=	$(MAIN)				\
+			$(LIB)				\
 			$(GET_NEXT_LINE)	\
 			$(MY_ERRORS)		\
 			$(PRSNG_VLDTN)		\
 			$(MY_SHELL)			\
+
 
 # *********************** MAIN ************************************************ #
 
@@ -39,8 +41,57 @@ HDRS	=	$(INCLD)libft.h\
 
 # *********************** LIBFT *********************************************** #	
 
+#LIBFT_DIR 	= srcs/libft/
+#LIBFT 		= $(LIBFT_DIR)libft.a
+
 LIBFT_DIR 	= srcs/libft/
-LIBFT 		= $(LIBFT_DIR)libft.a
+LIB 		= 		$(LIBFT_DIR)ft_memset.c\
+              $(LIBFT_DIR)ft_bzero.c\
+              $(LIBFT_DIR)ft_memcpy.c\
+              $(LIBFT_DIR)ft_memccpy.c\
+              $(LIBFT_DIR)ft_memmove.c\
+              $(LIBFT_DIR)ft_memchr.c\
+              $(LIBFT_DIR)ft_memcmp.c\
+              $(LIBFT_DIR)ft_strlen.c\
+              $(LIBFT_DIR)ft_isalpha.c\
+              $(LIBFT_DIR)ft_isdigit.c\
+              $(LIBFT_DIR)ft_isalnum.c\
+              $(LIBFT_DIR)ft_isascii.c\
+              $(LIBFT_DIR)ft_isprint.c\
+              $(LIBFT_DIR)ft_toupper.c\
+              $(LIBFT_DIR)ft_tolower.c\
+              $(LIBFT_DIR)ft_strrchr.c\
+              $(LIBFT_DIR)ft_strchr.c\
+              $(LIBFT_DIR)ft_strncmp.c\
+              $(LIBFT_DIR)ft_strlcpy.c\
+              $(LIBFT_DIR)ft_strlcat.c\
+              $(LIBFT_DIR)ft_strnstr.c\
+              $(LIBFT_DIR)ft_atoi.c\
+              $(LIBFT_DIR)ft_calloc.c\
+              $(LIBFT_DIR)ft_strdup.c\
+              $(LIBFT_DIR)ft_putchar_fd.c\
+              $(LIBFT_DIR)ft_substr.c\
+              $(LIBFT_DIR)ft_strjoin.c\
+              $(LIBFT_DIR)ft_strtrim.c\
+              $(LIBFT_DIR)ft_putstr_fd.c\
+              $(LIBFT_DIR)ft_putendl_fd.c\
+              $(LIBFT_DIR)ft_putnbr_fd.c\
+              $(LIBFT_DIR)ft_itoa.c\
+              $(LIBFT_DIR)ft_strmapi.c\
+              $(LIBFT_DIR)ft_split.c \
+              		$(LIBFT_DIR)ft_lstnew.c\
+              $(LIBFT_DIR)ft_lstadd_front.c\
+              $(LIBFT_DIR)ft_lstdelone.c\
+              $(LIBFT_DIR)ft_lstsize.c \
+              $(LIBFT_DIR)ft_lstlast.c \
+              $(LIBFT_DIR)ft_lstadd_back.c\
+              $(LIBFT_DIR)ft_lstclear.c\
+              $(LIBFT_DIR)ft_lstiter.c\
+              $(LIBFT_DIR)ft_lstmap.c\
+              		$(LIBFT_DIR)ft_strlen_sep.c \
+              $(LIBFT_DIR)ft_free_str.c \
+              $(LIBFT_DIR)ft_free_str_arr.c
+
 
 # *********************** GET_NEXT_LINE *************************************** #
 
@@ -67,11 +118,18 @@ PRSNG_VLDTN			=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 # *********************** MY_SHELL ******************************************** #
 
 MY_SHELL_DIR		= 	srcs/my_shell/
+BUILTINS_DIR		=	$(MY_SHELL_DIR)builtins/
+ENV					=	$(MY_SHELL_DIR)env/
+
 MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
-						$(MY_SHELL_DIR)builtins/pwd.c\
-						$(MY_SHELL_DIR)builtins/echo.c\
-#						$(MY_SHELL_DIR)your_function_2.c\
-#						etc
+						\
+						$(BUILTINS_DIR)pwd.c\
+						$(BUILTINS_DIR)echo.c\
+						$(BUILTINS_DIR)cd.c\
+						\
+						$(ENV)env.c\
+						$(ENV)ft_lst_test_printf.c\
+						$(ENV)ft_lst_Sort.c\
 
 # ***************************************************************************** #
 
@@ -89,16 +147,18 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			make -C $(LIBFT_DIR)
-			$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
+			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+#			$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
+
 .c.o:
 			@$(CC) $(CFLAGS) -I$(INCLD) -c $< -o $(<:.c=.o)
 
 clean:
-			make clean -C $(LIBFT_DIR)
+#			make clean -C $(LIBFT_DIR)
 			@rm -rf $(OBJ)
 
 fclean:		clean
-			make fclean -C $(LIBFT_DIR)
+#			make fclean -C $(LIBFT_DIR)
 			@rm -rf $(NAME)
 
 re:			fclean all

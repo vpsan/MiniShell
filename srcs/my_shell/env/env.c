@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   env.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 18:43:45 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 14:25:32 by bhatches         ###   ########.fr       */
+/*   Created: 2021/06/06 20:06:36 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/06 20:08:11 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "my_shell.h"
 #include "libft.h"
+#include "printf.h"
 
-void	ft_lstclear(t_list **lst, void *(*del)(char ***arr))
+void	create_env_var(t_main *prmtrs, char **env)
 {
-	if (*lst && lst)
+	int	i;
+
+	i = 0;
+	prmtrs->env_head = NULL;
+	while (env[i] != NULL)
 	{
-		ft_lstclear(&(*lst)->next, del);
-		ft_lstdelone(*lst, del);
-		*lst = NULL;
+		ft_lstadd_back(&prmtrs->env_head, ft_lstnew(ft_split(env[i], '='), 1));
+		i++;
 	}
+	return ;
 }

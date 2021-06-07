@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 15:27:26 by bhatches          #+#    #+#             */
-/*   Updated: 2021/05/31 15:30:24 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/06 13:53:58 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct  s_prsng
 typedef struct  s_cmd
 {
 	char 	*cmnd_str;
-	char 	*cmnd_words;
+	char 	**cmnd_words;
 //	t_flag	flgs;
 //	file
 //	input and output of	cmd;
@@ -36,7 +36,7 @@ typedef struct  s_shell
 
 typedef struct  s_main
 {
-	t_list		*env_var;
+	t_list		*env_head;
 	char 		*input;
 	t_prsng		prsng;
 	t_cmd		*cmnds;
