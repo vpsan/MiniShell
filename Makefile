@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/07 17:06:34 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/07 18:31:50 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,20 +121,25 @@ PRSNG_VLDTN			=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 MY_SHELL_DIR		= 	srcs/my_shell/
 BUILTINS_DIR		=	$(MY_SHELL_DIR)builtins/
 ENV					=	$(MY_SHELL_DIR)env/
+TESTERS				=	$(MY_SHELL_DIR)testers/
 
 MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						\
 						$(BUILTINS_DIR)pwd.c\
                         $(BUILTINS_DIR)env.c\
+                        $(BUILTINS_DIR)unset.c\
 						$(BUILTINS_DIR)echo.c\
 						$(BUILTINS_DIR)cd.c\
 						\
-						$(ENV)env.c\
-						$(ENV)ft_lst_test_printf.c\
+						$(ENV)create_env_var.c\
 						$(ENV)ft_lst_Sort.c\
+                        \
+						$(TESTERS)test_env_add.c\
+                        $(TESTERS)test_printf_all_List_env.c\
+                        $(TESTERS)test_builtins_env.c\
+                        $(TESTERS)test_builtins_unset.c\
 
 # ***************************************************************************** #
-
 
 
 OBJ		=	$(SRCS:.c=.o)

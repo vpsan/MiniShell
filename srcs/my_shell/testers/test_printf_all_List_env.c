@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_test_printf.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 20:05:12 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 20:05:15 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/07 18:30:34 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-void	ft_lst_test_printf(t_list *env_head)
+void	test_printf_all_List_env(t_list *env_head)
 {
 	t_list	*tmp;
 	int		number_i;

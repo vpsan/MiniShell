@@ -12,7 +12,7 @@
 
 #include "my_shell.h"
 
-int     ft_env(t_main *prmtrs)
+int     env(t_main *prmtrs)
 {
     t_list  *tmp;
 
