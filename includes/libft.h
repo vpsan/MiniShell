@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 16:15:07 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 18:18:41 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:03:54 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 size_t				ft_strlen_sep(const char *str, int value);
 int					ft_free_str(char **s);
 void				*ft_free_str_arr(char ***arr);
+int					ft_strcmp(const char *str1, const char *str2);
 
 #endif

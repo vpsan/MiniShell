@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 14:08:26 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/07 17:06:45 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		my_shell(t_main *prtmtrs);
 
 //	BUILTINS:
 int		pwd(void);
+int     ft_env(t_main *prmtrs);
 
 // ENV:
 void	create_env_var(t_main *prmtrs, char **env);

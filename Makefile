@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/06 14:09:03 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/07 17:06:34 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ LIB 		= 		$(LIBFT_DIR)ft_memset.c\
               $(LIBFT_DIR)ft_strrchr.c\
               $(LIBFT_DIR)ft_strchr.c\
               $(LIBFT_DIR)ft_strncmp.c\
+              $(LIBFT_DIR)ft_strcmp.c\
               $(LIBFT_DIR)ft_strlcpy.c\
               $(LIBFT_DIR)ft_strlcat.c\
               $(LIBFT_DIR)ft_strnstr.c\
@@ -124,6 +125,7 @@ ENV					=	$(MY_SHELL_DIR)env/
 MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						\
 						$(BUILTINS_DIR)pwd.c\
+                        $(BUILTINS_DIR)env.c\
 						$(BUILTINS_DIR)echo.c\
 						$(BUILTINS_DIR)cd.c\
 						\
