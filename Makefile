@@ -125,12 +125,13 @@ TESTERS				=	$(MY_SHELL_DIR)testers/
 
 MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						\
-						$(BUILTINS_DIR)pwd.c\
                         $(BUILTINS_DIR)env.c\
                         $(BUILTINS_DIR)unset.c\
                         $(BUILTINS_DIR)export.c\
+						$(BUILTINS_DIR)pwd.c\
 						$(BUILTINS_DIR)echo.c\
 						$(BUILTINS_DIR)cd.c\
+						$(BUILTINS_DIR)exit.c\
 						\
 						$(ENV)create_env_var.c\
 						$(ENV)ft_lst_Sort.c\

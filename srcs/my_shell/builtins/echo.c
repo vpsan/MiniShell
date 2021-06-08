@@ -47,3 +47,9 @@
 //		write(1, "\n", 1);
 //	return (0);
 //}
+
+int 	builtin_echo(char **cmnd_words)
+{
+
+	return (0);
+}
