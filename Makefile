@@ -128,6 +128,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						$(BUILTINS_DIR)pwd.c\
                         $(BUILTINS_DIR)env.c\
                         $(BUILTINS_DIR)unset.c\
+                        $(BUILTINS_DIR)export.c\
 						$(BUILTINS_DIR)echo.c\
 						$(BUILTINS_DIR)cd.c\
 						\
@@ -138,6 +139,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(TESTERS)test_printf_all_List_env.c\
                         $(TESTERS)test_builtins_env.c\
                         $(TESTERS)test_builtins_unset.c\
+                        $(TESTERS)test_builtins_export.c\
 
 # ***************************************************************************** #
 

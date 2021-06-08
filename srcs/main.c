@@ -26,7 +26,7 @@ int	main(int argc, char **argv, char **env)
 //	test_env_add(prmtrs);
 //	test_builtins_env(prmtrs);
 //	test_builtins_unset(prmtrs);
-
+	test_builtins_export(prmtrs);
 
 	ft_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");

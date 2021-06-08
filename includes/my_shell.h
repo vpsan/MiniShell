@@ -44,6 +44,7 @@ void	test_printf_all_List_env(t_list *env_head);
 void 	test_builtins_env(t_main prmtrs);
 void 	test_builtins_pwd(t_main prmtrs);
 void 	test_builtins_unset(t_main prmtrs);
+void 	test_builtins_export(t_main prmtrs);
 
 
 #endif
