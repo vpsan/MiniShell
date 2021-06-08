@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 16:39:05 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 17:01:20 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	    env_lstdelone(t_env_list *lst, void *(*del)(char ***arr));
 void	    env_lstclear(t_env_list **lst, void *(*del)(char ***arr));
 void	    env_lstiter(t_env_list *lst, void (*f)(void *));
 t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *), void *(*del)(char ***arr));
+char        *getvalue_env_lst(char *name, t_env_list *lst);
 
 // // // //	BUILTINS:
 int         builtin_env(t_main *prmtrs);

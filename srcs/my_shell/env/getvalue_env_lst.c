@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_cd.c                                       :+:      :+:    :+:   */
+/*   getvalue_env_lst.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/07 15:40:20 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 16:53:58 by bhatches         ###   ########.fr       */
+/*   Created: 2021/06/08 16:58:17 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/08 17:01:18 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-int 	builtin_cd(char **cmnd_words)
+char        *getvalue_env_lst(char *name, t_env_list *lst)
 {
 
-	return (0);
+    return (NULL);
 }
