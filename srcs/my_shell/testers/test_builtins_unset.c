@@ -31,5 +31,7 @@ void 	test_builtins_unset(t_main prmtrs)
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	env(&prmtrs);
+
+	ft_free_str_arr(&cmnd_words);
 	return ;
 }

@@ -155,7 +155,7 @@ OPTFLGS	=	-O2
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-			make -C $(LIBFT_DIR)
+#			make -C $(LIBFT_DIR)
 			$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 #			$(CC) $(CFLAGS) $(LIBFT) $(OBJ) -o $(NAME)
 
@@ -171,3 +171,6 @@ fclean:		clean
 			@rm -rf $(NAME)
 
 re:			fclean all
+
+.SILENT:	all $(NAME) .c.o clean fclean re
+

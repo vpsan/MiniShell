@@ -34,7 +34,8 @@ int 	print_export_declare_x(t_list *env_head)
 
 int 	export(char **cmnd_words, t_list *env_head)
 {
-	int	i;
+	char 	**arr;
+	int		i;
 
 
 	if (cmnd_words[1] == NULL)
@@ -42,6 +43,18 @@ int 	export(char **cmnd_words, t_list *env_head)
 		print_export_declare_x(env_head);
 		return (0);
 	}
-	i = 1;
+	else
+	{
+		i = 1;
+		while (cmnd_words[i] != NULL)
+		{
+			arr = ft_split(cmnd_words[i], '=');
+			if (arr[1] == NULL)
+				ft_lstadd_back(&env_head, ft_lstnew(arr, 0));
+			else
+				ft_lstadd_back(&env_head, ft_lstnew(arr, 1));
+			i++;
+		}
+	}
 	return (0);
 }
