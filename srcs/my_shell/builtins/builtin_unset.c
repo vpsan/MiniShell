@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   unset.c                                            :+:      :+:    :+:   */
+/*   builtin_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:03:58 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/07 20:04:16 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:04:20 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@
      return (0);
  }
 
- int     unset(char *cmnd_str, char **cmnd_words, t_list *env_head)
+ int     builtin_unset(char *cmnd_str, char **cmnd_words, t_list *env_head)
  {
      t_list *tmp;
      int     i;

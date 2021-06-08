@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/07 18:31:50 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/08 15:01:39 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ HDRS	=	$(INCLD)libft.h\
 #			$(INCLD)your_header_1.h\
 #			$(INCLD)your_header_2.h\
 #			etc
-
 
 # *********************** LIBFT *********************************************** #	
 
@@ -125,13 +124,13 @@ TESTERS				=	$(MY_SHELL_DIR)testers/
 
 MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						\
-                        $(BUILTINS_DIR)env.c\
-                        $(BUILTINS_DIR)unset.c\
-                        $(BUILTINS_DIR)export.c\
-						$(BUILTINS_DIR)pwd.c\
-						$(BUILTINS_DIR)echo.c\
-						$(BUILTINS_DIR)cd.c\
-						$(BUILTINS_DIR)exit.c\
+                        $(BUILTINS_DIR)builtin_env.c\
+                        $(BUILTINS_DIR)builtin_unset.c\
+                        $(BUILTINS_DIR)builtin_export.c\
+						$(BUILTINS_DIR)builtin_pwd.c\
+						$(BUILTINS_DIR)builtin_echo.c\
+						$(BUILTINS_DIR)builtin_cd.c\
+						$(BUILTINS_DIR)builtin_exit.c\
 						\
 						$(ENV)create_env_var.c\
 						$(ENV)ft_lst_Sort.c\

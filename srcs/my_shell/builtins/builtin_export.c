@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   export.c                                           :+:      :+:    :+:   */
+/*   builtin_export.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:06 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/07 20:04:09 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:03:09 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int 	print_export_declare_x(t_list *env_head)
 	return (1);
 }
 
-int 	export(char **cmnd_words, t_list *env_head)
+int 	builtin_export(char **cmnd_words, t_list *env_head)
 {
 	char 	**arr;
 	int		i;

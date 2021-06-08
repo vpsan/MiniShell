@@ -9,7 +9,7 @@ void 	test_builtins_env(t_main prmtrs)
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n\n");
-	env(&prmtrs);
+	builtin_env(&prmtrs);
 
 	// printf list with adding elements in env:
 	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("A=0", '='),1));
@@ -20,6 +20,6 @@ void 	test_builtins_env(t_main prmtrs)
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n\n");
-	env(&prmtrs);
+	builtin_env(&prmtrs);
 	return ;
 }

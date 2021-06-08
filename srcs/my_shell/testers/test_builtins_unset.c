@@ -10,7 +10,7 @@ void 	test_builtins_unset(t_main prmtrs)
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
-	env(&prmtrs);
+	builtin_env(&prmtrs);
 
 	// deleting A=0 from List_env and call env():
 	char **cmnd_words;
@@ -25,12 +25,12 @@ void 	test_builtins_unset(t_main prmtrs)
 	cmnd_words[2] = ft_strdup("=\0");
 	cmnd_words[3] = NULL;
 
-	unset("unset A\0", cmnd_words, prmtrs.env_head);
+	builtin_unset("unset A\0", cmnd_words, prmtrs.env_head);
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
-	env(&prmtrs);
+	builtin_env(&prmtrs);
 
 	ft_free_str_arr(&cmnd_words);
 	return ;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_builtins_export.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 11:02:42 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 11:02:45 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:05:58 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void 	test_builtins_export_without_arguments(t_main prmtrs)
 	cmnd_words[0] = NULL;
 	cmnd_words[1] = NULL;
 	cmnd_words[2] = NULL;
-	export(cmnd_words, prmtrs.env_head);
+	builtin_export(cmnd_words, prmtrs.env_head);
 
 	ft_free_str_arr(&cmnd_words);
 	return ;
@@ -56,8 +56,8 @@ void 	test_builtins_export_with_arguments(t_main prmtrs)
 //	cmnd_words[3] = NULL;
 //	cmnd_words[4] = NULL;
 
-	export(cmnd_words, prmtrs.env_head);
-	env(&prmtrs);
+	builtin_export(cmnd_words, prmtrs.env_head);
+	builtin_env(&prmtrs);
 
 	printf("-------------------------------\n");
 
@@ -65,7 +65,7 @@ void 	test_builtins_export_with_arguments(t_main prmtrs)
 	NULL_arr = (char **)malloc(sizeof(char *) * 2);
 	NULL_arr[0] = ft_strdup("export\0");
 	NULL_arr[1] = NULL;
-	export(NULL_arr, prmtrs.env_head);
+	builtin_export(NULL_arr, prmtrs.env_head);
 
 
 	ft_free_str_arr(&cmnd_words);
