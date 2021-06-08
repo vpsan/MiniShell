@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cd.c                                               :+:      :+:    :+:   */
+/*   builtin_cd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:40:20 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/07 15:40:22 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:12:26 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-//int		cd(char **cmnd_words, t_list *env_var)
+//int		cd(char **cmnd_words, t_env_list *env_var)
 //{
 //	char	*final_path;
 //	int 	i;

@@ -41,15 +41,15 @@ SRC		= ft_memset.c\
 		  $(MyNew)
 
 
-BON		= ft_lstnew.c\
-		  ft_lstadd_front.c\
-		  ft_lstdelone.c\
-		  ft_lstsize.c \
-		  ft_lstlast.c \
-		  ft_lstadd_back.c\
-		  ft_lstclear.c\
-		  ft_lstiter.c\
-	      ft_lstmap.c
+BON		= env_lstnew.c\
+		  env_lstadd_front.c\
+		  env_lstdelone.c\
+		  env_lstsize.c \
+		  env_lstlast.c \
+		  env_lstadd_back.c\
+		  env_lstclear.c\
+		  env_lstiter.c\
+	      env_lstmap.c
 
 MyNew	= ft_strlen_sep.c \
 		  ft_free_str.c \

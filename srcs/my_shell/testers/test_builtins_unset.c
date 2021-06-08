@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_builtins_unset.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/08 15:14:36 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/08 16:09:23 by bhatches         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "my_shell.h"
+#include "libft.h"
 #include <printf.h>
 
 void 	test_builtins_unset(t_main prmtrs)
 {
 	// adding A=0 to List_env and call env():
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("A=0", '='),1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='),1));
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");

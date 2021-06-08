@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_exit.c                                     :+:      :+:    :+:   */
+/*   env_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 12:53:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:13:33 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/09 14:06:08 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/08 15:51:25 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-int 	builtin_exit(char **cmnd_words)
+t_env_list	*env_lstlast(t_env_list *lst)
 {
+	t_env_list	*p;
 
-	return (0);
+	if (lst == NULL)
+	{
+		return (NULL);
+	}
+	p = lst;
+	while (p->next != NULL)
+	{
+		p = p->next;
+	}
+	return (p);
 }

@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_exit.c                                     :+:      :+:    :+:   */
+/*   create_env_lst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 12:53:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:13:33 by bhatches         ###   ########.fr       */
+/*   Created: 2021/06/06 20:06:36 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/08 16:10:52 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
+#include "libft.h"
+#include "printf.h"
 
-int 	builtin_exit(char **cmnd_words)
+void	create_env_lst(t_main *prmtrs, char **env)
 {
+	int	i;
 
-	return (0);
+	i = 0;
+	prmtrs->env_head = NULL;
+	while (env[i] != NULL)
+	{
+		env_lstadd_back(&prmtrs->env_head, env_lstnew(ft_split(env[i], '='), 1));
+		i++;
+	}
+	return ;
 }

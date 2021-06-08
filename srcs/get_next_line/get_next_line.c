@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 12:12:10 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 16:28:30 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:22:25 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	gnl_check_or_creat_buf(int fd, char **buf)
 		}
 		buf[fd][0] = '\0';
 	}
-	return (TRUE);
+	return (true);
 }
 
 int	gnl_read_line(int fd, char **buf, char **line)

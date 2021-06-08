@@ -6,18 +6,18 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:06 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:03:09 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:12:26 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 #include <printf.h>
 
-int 	print_export_declare_x(t_list *env_head)
+int 	print_export_declare_x(t_env_list *env_head)
 {
-	t_list	*tmp;
+	t_env_list	*tmp;
 
-	env_head = ft_lst_Sort(env_head);
+	env_head = env_lst_sort(env_head);
 	tmp = env_head;
 	while(tmp != NULL)
 	{
@@ -32,7 +32,7 @@ int 	print_export_declare_x(t_list *env_head)
 	return (1);
 }
 
-int 	builtin_export(char **cmnd_words, t_list *env_head)
+int 	builtin_export(char **cmnd_words, t_env_list *env_head)
 {
 	char 	**arr;
 	int		i;
@@ -50,9 +50,9 @@ int 	builtin_export(char **cmnd_words, t_list *env_head)
 		{
 			arr = ft_split(cmnd_words[i], '=');
 			if (arr[1] == NULL)
-				ft_lstadd_back(&env_head, ft_lstnew(arr, 0));
+				env_lstadd_back(&env_head, env_lstnew(arr, 0));
 			else
-				ft_lstadd_back(&env_head, ft_lstnew(arr, 1));
+				env_lstadd_back(&env_head, env_lstnew(arr, 1));
 			i++;
 		}
 	}

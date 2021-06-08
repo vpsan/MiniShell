@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_exit.c                                     :+:      :+:    :+:   */
+/*   env_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 12:53:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:13:33 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/09 18:56:55 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/08 15:51:22 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-int 	builtin_exit(char **cmnd_words)
+void	env_lstiter(t_env_list *lst, void (*f)(void *))
 {
+	t_env_list	*p;
 
-	return (0);
+	p = lst;
+	if (f != NULL)
+	{
+		while (p != NULL)
+		{
+			f(p->env_arr);
+			p = p->next;
+		}
+	}
 }

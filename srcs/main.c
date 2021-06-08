@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:08:24 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:17:06 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv, char **env)
 {
 	t_main	prmtrs;
 
-	create_env_var(&prmtrs, env);
+	create_env_lst(&prmtrs, env);
 
 	// test_env_add(prmtrs);
 	// test_builtins_env(prmtrs);
@@ -30,7 +30,7 @@ int	main(int argc, char **argv, char **env)
 	// test_builtins_export_without_arguments(prmtrs);
 	// test_builtins_export_with_arguments(prmtrs);
 
-	ft_lstclear(&prmtrs.env_head, ft_free_str_arr);
+	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");
 	// sleep(30);
 	return (0);

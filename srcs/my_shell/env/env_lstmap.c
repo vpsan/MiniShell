@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_printf_all_List_env.c                         :+:      :+:    :+:   */
+/*   env_lstmap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/06 20:05:12 by bhatches          #+#    #+#             */
+/*   Created: 2020/11/09 20:17:25 by bhatches          #+#    #+#             */
 /*   Updated: 2021/06/08 16:12:26 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
-#include "libft.h"
-#include <printf.h>
 
-void	test_printf_all_List_env(t_env_list *env_head)
+t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *), void *(*del)(char ***))
 {
-	t_env_list	*tmp;
-	int		number_i;
+	t_env_list	*new_begin;
+	t_env_list	*p;
 
-	tmp = env_head;
-	number_i = 0;
-	while (tmp != NULL)
+	if (lst == NULL)
+		return (NULL);
+	new_begin = env_lstnew(f(lst->env_arr), 1);
+	if (new_begin == NULL)
 	{
-		printf("name = %s\n", tmp->env_arr[0]);
-		printf("value = %s\n", tmp->env_arr[1]);
-		printf("declare_flag = %d\n", tmp->declare_flag);
-		printf("number_i = %d\n", number_i);
-		printf("\n");
-		tmp = tmp->next;
-		number_i++;
+		return (NULL);
 	}
-	return ;
+	p = new_begin;
+	lst = lst->next;
+	while (lst != NULL)
+	{
+		p = env_lstnew(f(lst->env_arr), 1);
+		if (p == NULL)
+		{
+			env_lstclear(&new_begin, del);
+			return (NULL);
+		}
+		env_lstadd_back(&new_begin, p);
+		lst = lst->next;
+	}
+	return (new_begin);
 }

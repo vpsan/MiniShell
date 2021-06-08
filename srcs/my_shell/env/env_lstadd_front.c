@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env.c                                              :+:      :+:    :+:   */
+/*   env_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/06 20:06:36 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 20:08:11 by bhatches         ###   ########.fr       */
+/*   Created: 2020/11/09 12:27:24 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/08 15:51:06 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
-#include "libft.h"
-#include "printf.h"
 
-void	create_env_var(t_main *prmtrs, char **env)
+void	env_lstadd_front(t_env_list **lst, t_env_list *new)
 {
-	int	i;
+	t_env_list	*buf;
 
-	i = 0;
-	prmtrs->env_head = NULL;
-	while (env[i] != NULL)
+	if (*lst == NULL)
 	{
-		ft_lstadd_back(&prmtrs->env_head, ft_lstnew(ft_split(env[i], '='), 1));
-		i++;
+		*lst = new;
 	}
-	return ;
+	else if (new == NULL)
+	{
+		return ;
+	}
+	else
+	{
+		buf = *lst;
+		*lst = new;
+		new->next = buf;
+	}
 }

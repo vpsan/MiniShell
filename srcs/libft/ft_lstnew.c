@@ -6,13 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 12:19:21 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 18:18:29 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:45:59 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(char **env_arr, int declare_flag)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*p;
 
@@ -21,8 +21,7 @@ t_list	*ft_lstnew(char **env_arr, int declare_flag)
 	{
 		return (NULL);
 	}
-	p->env_arr = env_arr;
-	p->declare_flag = declare_flag;
+	p->content = content;
 	p->next = NULL;
 	return (p);
 }

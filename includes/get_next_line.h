@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 12:12:06 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 16:26:02 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 15:22:23 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 4096
 # endif
-# define TRUE 1
-# define FALSE 0
 # define ERROR -1
 
 int			get_next_line(int fd, char **line);

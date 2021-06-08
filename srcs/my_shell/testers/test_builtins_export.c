@@ -6,18 +6,19 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 11:02:42 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:05:58 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:09:23 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 #include "libft.h"
+#include <printf.h>
 
 void 	test_builtins_export_without_arguments(t_main prmtrs)
 {
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("A=0", '='), 0));
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("B", '='), 1));
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("C=", '='), 1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='), 0));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("B", '='), 1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("C=", '='), 1));
 
 	char **cmnd_words;
 	cmnd_words = (char **)malloc(sizeof(char *) * 3);

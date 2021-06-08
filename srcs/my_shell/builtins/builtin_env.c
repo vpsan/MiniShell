@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:40:13 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:06:54 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:12:26 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int     builtin_env(t_main *prmtrs)
 {
-    t_list  *tmp;
+    t_env_list  *tmp;
 
     tmp = prmtrs->env_head;
     while (tmp != NULL)

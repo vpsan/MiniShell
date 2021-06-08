@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_mergeSort.c                                 :+:      :+:    :+:   */
+/*   env_lst_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 19:38:43 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 19:38:48 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:12:26 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include "printf.h"
 
-void 	swapLists(t_list **lst_1, t_list **lst_2)
+void 	swapLists(t_env_list **lst_1, t_env_list **lst_2)
 {
 	(*lst_1)->next = (*lst_2);
 	(*lst_1) = (*lst_2);
@@ -22,11 +22,11 @@ void 	swapLists(t_list **lst_1, t_list **lst_2)
 	return ;
 }
 
-t_list	*mergeLists(t_list *a, t_list *b)
+t_env_list	*mergeLists(t_env_list *a, t_env_list *b)
 {
-	t_list	tmp;
-	t_list	*head;
-	t_list	*c;
+	t_env_list	tmp;
+	t_env_list	*head;
+	t_env_list	*c;
 	int		result_minus_or_plus;
 
 	head = &tmp;
@@ -45,10 +45,10 @@ t_list	*mergeLists(t_list *a, t_list *b)
 	return (head->next);
 }
 
-t_list	*ft_lst_Sort(t_list *c)
+t_env_list	*env_lst_sort(t_env_list *c)
 {
-	t_list	*a;
-	t_list	*b;
+	t_env_list	*a;
+	t_env_list	*b;
 
 	a = c;
 	b = c->next;
@@ -61,5 +61,5 @@ t_list	*ft_lst_Sort(t_list *c)
 	}
 	b = c->next;
 	c->next = 0;
-	return (mergeLists(ft_lst_Sort(a), ft_lst_Sort(b)));
+	return (mergeLists(env_lst_sort(a), env_lst_sort(b)));
 }

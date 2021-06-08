@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 18:56:55 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 14:01:25 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/04/19 11:11:50 by valery           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	{
 		while (p != NULL)
 		{
-			f(p->env_arr);
+			f(p->content);
 			p = p->next;
 		}
 	}

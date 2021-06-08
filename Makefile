@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/08 15:01:39 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/08 16:16:24 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ LIB 		= 		$(LIBFT_DIR)ft_memset.c\
               $(LIBFT_DIR)ft_itoa.c\
               $(LIBFT_DIR)ft_strmapi.c\
               $(LIBFT_DIR)ft_split.c \
-              		$(LIBFT_DIR)ft_lstnew.c\
+                  $(LIBFT_DIR)ft_lstnew.c\
               $(LIBFT_DIR)ft_lstadd_front.c\
               $(LIBFT_DIR)ft_lstdelone.c\
               $(LIBFT_DIR)ft_lstsize.c \
@@ -91,6 +91,7 @@ LIB 		= 		$(LIBFT_DIR)ft_memset.c\
               		$(LIBFT_DIR)ft_strlen_sep.c \
               $(LIBFT_DIR)ft_free_str.c \
               $(LIBFT_DIR)ft_free_str_arr.c
+
 
 
 # *********************** GET_NEXT_LINE *************************************** #
@@ -132,8 +133,17 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						$(BUILTINS_DIR)builtin_cd.c\
 						$(BUILTINS_DIR)builtin_exit.c\
 						\
-						$(ENV)create_env_var.c\
-						$(ENV)ft_lst_Sort.c\
+						$(ENV)create_env_lst.c\
+						$(ENV)env_lst_sort.c\
+                        $(ENV)env_lstnew.c\
+                        $(ENV)env_lstadd_front.c\
+                        $(ENV)env_lstdelone.c\
+                        $(ENV)env_lstsize.c \
+                        $(ENV)env_lstlast.c \
+                        $(ENV)env_lstadd_back.c\
+                        $(ENV)env_lstclear.c\
+                        $(ENV)env_lstiter.c\
+                        $(ENV)env_lstmap.c\
                         \
 						$(TESTERS)test_env_add.c\
                         $(TESTERS)test_printf_all_List_env.c\

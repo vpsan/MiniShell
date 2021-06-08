@@ -6,17 +6,13 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 18:19:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/07 18:30:39 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:09:23 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-# include "my_structures.h"
-#include "prsng_vldtn.h"
 #include "my_shell.h"
-#include "my_errors.h"
-#include <stdbool.h>
-#include <stdio.h>
+#include "libft.h"
+#include <printf.h>
 
 void 	test_env_add(t_main prmtrs)
 {
@@ -25,16 +21,16 @@ void 	test_env_add(t_main prmtrs)
 		test_printf_all_List_env(prmtrs.env_head);
 	}
 
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("A=0", '='),
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='),
 											   0));
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("a=1", '='),
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("a=1", '='),
 											   0));
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("b=1", '='),
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("b=1", '='),
 											   0));
-	ft_lstadd_back(&prmtrs.env_head, ft_lstnew(ft_split("c=2", '='),
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("c=2", '='),
 											   0));
 
-	prmtrs.env_head = ft_lst_Sort(prmtrs.env_head);
+	prmtrs.env_head = env_lst_sort(prmtrs.env_head);
 	{
 		printf("/////////// PRINT LIST_ENV AFTER SORT AND ADDING /////////\n");
 		test_printf_all_List_env(prmtrs.env_head);
