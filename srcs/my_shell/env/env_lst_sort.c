@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/06 19:38:43 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 16:12:26 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/08 16:38:01 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include "printf.h"
 
-void 	swapLists(t_env_list **lst_1, t_env_list **lst_2)
+void 	swap_env_lst(t_env_list **lst_1, t_env_list **lst_2)
 {
 	(*lst_1)->next = (*lst_2);
 	(*lst_1) = (*lst_2);
@@ -22,7 +22,7 @@ void 	swapLists(t_env_list **lst_1, t_env_list **lst_2)
 	return ;
 }
 
-t_env_list	*mergeLists(t_env_list *a, t_env_list *b)
+t_env_list	*merge_env_lst(t_env_list *a, t_env_list *b)
 {
 	t_env_list	tmp;
 	t_env_list	*head;
@@ -34,9 +34,9 @@ t_env_list	*mergeLists(t_env_list *a, t_env_list *b)
 	while ((a != 0) && (b != 0))
 	{
 		if (a->env_arr[0][0] < b->env_arr[0][0])
-			swapLists(&c, &a);
+			swap_env_lst(&c, &a);
 		else
-			swapLists(&c, &b);
+			swap_env_lst(&c, &b);
 	}
 	if (a == 0)
 		c->next = b;
@@ -61,5 +61,5 @@ t_env_list	*env_lst_sort(t_env_list *c)
 	}
 	b = c->next;
 	c->next = 0;
-	return (mergeLists(env_lst_sort(a), env_lst_sort(b)));
+	return (merge_env_lst(env_lst_sort(a), env_lst_sort(b)));
 }
