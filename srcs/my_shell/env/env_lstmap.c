@@ -6,13 +6,14 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 20:17:25 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 16:12:26 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:17:52 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *), void *(*del)(char ***))
+t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *),
+											void *(*del)(char ***))
 {
 	t_env_list	*new_begin;
 	t_env_list	*p;

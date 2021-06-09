@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   env_lstdelone.c                                     :+:      :+:    :+:   */
+/*   env_lstdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/09 14:48:36 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:51:20 by bhatches         ###   ########.fr       */
+/*   Created: 2021/06/09 22:16:36 by bhatches          #+#    #+#             */
+/*   Updated: 2021/06/09 22:16:38 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@ void	env_lstdelone(t_env_list *lst, void *(*del)(char ***arr))
 {
 	if ((*del) != NULL)
 	{
-		// if (lst->env_arr[1] != NULL)
-		// 	if (strcmp(lst->env_arr[1], "..") ==  0)
-		// 		printf("SSSSS = %s\n", lst->env_arr[0]);
 		(*del)(&lst->env_arr);
 	}
 	free(lst);

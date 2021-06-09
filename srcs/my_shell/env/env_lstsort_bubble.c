@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 22:03:26 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 22:08:14 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:22:51 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	swap(t_env_list *a, t_env_list *b)
 
 int 	do_while(t_env_list *env_head)
 {
-	int 		swapped;
+	int			swapped;
 	t_env_list	*ptr1;
 	t_env_list	*lptr;
 
@@ -53,7 +53,7 @@ void	env_lstsort_bubble(t_env_list *env_head)
 	int	swapped;
 
 	if (env_head == NULL)
-		return;
+		return ;
 	swapped = do_while(env_head);
 	while (swapped)
 		swapped = do_while(env_head);
