@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/08 17:00:21 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/09 13:26:13 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -145,12 +145,15 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(ENV)env_lstiter.c\
                         $(ENV)env_lstmap.c\
                         $(ENV)getvalue_env_lst.c\
+                        $(ENV)updatevalue_env_lst.c\
                         \
 						$(TESTERS)test_env_add.c\
                         $(TESTERS)test_printf_all_List_env.c\
                         $(TESTERS)test_builtins_env.c\
                         $(TESTERS)test_builtins_unset.c\
                         $(TESTERS)test_builtins_export.c\
+                        $(TESTERS)test_updatevalue_env_lst.c\
+                        $(TESTERS)test_builtin_cd.c\
 
 # ***************************************************************************** #
 

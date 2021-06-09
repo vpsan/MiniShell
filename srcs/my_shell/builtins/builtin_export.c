@@ -17,8 +17,8 @@ int 	print_export_declare_x(t_env_list *env_head)
 {
 	t_env_list	*tmp;
 
-	env_head = env_lst_sort(env_head);
 	tmp = env_head;
+//	tmp = env_lst_sort(tmp);
 	while(tmp != NULL)
 	{
 		printf("declare -x ");

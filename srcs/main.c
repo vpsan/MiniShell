@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 12:02:44 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 13:33:51 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int	main(int argc, char **argv, char **env)
 	// test_builtins_unset(prmtrs);
 	// test_builtins_export_without_arguments(prmtrs);
 	// test_builtins_export_with_arguments(prmtrs);
-	
+	// test_updatevalue_env_lst(prmtrs);
+	 test_builtin_cd(prmtrs);
+
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");
 	// sleep(30);
