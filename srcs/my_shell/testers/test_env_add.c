@@ -30,7 +30,7 @@ void 	test_env_add(t_main prmtrs)
 	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("c=2", '='),
 											   0));
 
-	prmtrs.env_head = env_lst_sort(prmtrs.env_head);
+//	prmtrs.env_head = env_lst_sort(prmtrs.env_head);
 	{
 		printf("/////////// PRINT LIST_ENV AFTER SORT AND ADDING /////////\n");
 		test_printf_all_env_lst(prmtrs.env_head);

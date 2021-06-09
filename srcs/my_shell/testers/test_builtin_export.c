@@ -68,7 +68,7 @@ void 	test_builtin_export_with_arguments(t_main prmtrs)
 	NULL_arr[1] = NULL;
 	builtin_export(NULL_arr, prmtrs.env_head);
 
-
 	ft_free_str_arr(&cmnd_words);
+	ft_free_str_arr(&NULL_arr);
 	return ;
 }

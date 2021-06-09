@@ -21,6 +21,6 @@ void 		test_updatevalue_env_lst(t_main prmtrs)
 	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("Z2=new", '='), 1));
 	updatevalue_env_lst("Z1", s1, &prmtrs.env_head);
 	updatevalue_env_lst("Z2", s2, &prmtrs.env_head);
-	test_builtin_export_without_arguments(prmtrs);
+	print_export_declare_x(prmtrs.env_head);
 	return ;
 }

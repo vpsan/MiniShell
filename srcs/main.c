@@ -27,17 +27,18 @@ int	main(int argc, char **argv, char **env)
 	(void)argv;
 	create_env_lst(&prmtrs, env);
 
-	// test_env_add(prmtrs);
-	// test_builtin_env(prmtrs);
-	// test_builtin_unset(prmtrs);
-	// test_builtin_export_without_arguments(prmtrs);
-	// test_builtin_export_with_arguments(prmtrs);
-	// test_updatevalue_env_lst(prmtrs);
-	test_builtin_cd(prmtrs);
-	// test_builtin_echo(prmtrs);
+	// test_env_add(prmtrs);							// leaks OK
+										 			// // leaks KO - env_lst_sort()
+	// test_updatevalue_env_lst(prmtrs);				// leaks OK
+	// test_builtin_env(prmtrs);						// leaks OK
+	// test_builtin_unset(prmtrs);						// leaks OK
+	// test_builtin_export_without_arguments(prmtrs);	// leaks OK
+	// test_builtin_export_with_arguments(prmtrs);		// leaks OK
+	// test_builtin_cd(prmtrs);							// leaks OK
+	// test_builtin_echo(prmtrs);						// leaks OK
 
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");
-//	sleep(30);
+	sleep(30);
 	return (0);
 }
