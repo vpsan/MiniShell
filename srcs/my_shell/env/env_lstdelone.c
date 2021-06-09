@@ -16,6 +16,9 @@ void	env_lstdelone(t_env_list *lst, void *(*del)(char ***arr))
 {
 	if ((*del) != NULL)
 	{
+		// if (lst->env_arr[1] != NULL)
+		// 	if (strcmp(lst->env_arr[1], "..") ==  0)
+		// 		printf("SSSSS = %s\n", lst->env_arr[0]);
 		(*del)(&lst->env_arr);
 	}
 	free(lst);

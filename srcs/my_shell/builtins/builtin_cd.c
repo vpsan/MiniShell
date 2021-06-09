@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 15:40:20 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 13:26:35 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:36:07 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int 	builtin_cd(char **cmnd_words, t_env_list* env_head)
 		return (0);
 	}
 	////////////////
-	updatevalue_env_lst("OLWDPWD", saved_old_pwd, &env_head);
+	updatevalue_env_lst("OLDPWD", saved_old_pwd, &env_head);
 	updatevalue_env_lst("PWD", saved_new_pwd, &env_head);
+	ft_free_str(&path_to_dir);
 	return (0);
 }

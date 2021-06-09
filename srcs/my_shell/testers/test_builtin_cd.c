@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_builtin_cd.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 15:21:54 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 15:22:06 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:33:26 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ void 	test_builtin_cd(t_main prmtrs)
 //	cmnd_words[3] = NULL;
 //	cmnd_words[4] = NULL;
 
-//	print_export_declare_x(prmtrs.env_head);
+	// print_export_declare_x(prmtrs.env_head);
 	builtin_cd(cmnd_words, prmtrs.env_head);
 	printf("______________________________\n");
 	printf("______________________________\n");
 	printf("______________________________\n");
-	print_export_declare_x(prmtrs.env_head);
-	builtin_pwd();
+	// print_export_declare_x(prmtrs.env_head);
+	// builtin_pwd();
+	
+	ft_free_str_arr(&cmnd_words);
 	return ;
 }

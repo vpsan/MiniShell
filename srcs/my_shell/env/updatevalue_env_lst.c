@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 12:47:49 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 13:33:07 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 20:34:33 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ void    updatevalue_env_lst(char *name,
             {
                 ft_free_str(&tmp->env_arr[1]);
 				tmp->env_arr[1] = malloced_new_value;
+                printf("1\n");
+                printf("p = %p\n", tmp->env_arr[1]);
+                printf("p = %p\n", malloced_new_value);
             }
             else
             {
@@ -34,6 +37,9 @@ void    updatevalue_env_lst(char *name,
                 new_arr = (char **)malloc(sizeof(char *) * 3);
                 new_arr[0] = ft_strdup(name);
                 new_arr[1] = malloced_new_value;
+                printf("2\n");
+                printf("p = %p\n", tmp->env_arr[1]);
+                printf("p = %p\n", malloced_new_value);
                 new_arr[2] = NULL;
 				tmp->env_arr = new_arr;
             }
