@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 13:27:06 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:01:13 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,11 @@ void 	    test_env_add(t_main prmtrs);
 void    	test_printf_all_env_lst(t_env_list *env_head);
 void 		test_updatevalue_env_lst(t_main prmtrs);
 // // // //	FOR BUILTINS:
-void 	    test_builtins_env(t_main prmtrs);
-void 	    test_builtins_pwd(t_main prmtrs);
-void 	    test_builtins_unset(t_main prmtrs);
-void 	    test_builtins_export_without_arguments(t_main prmtrs);
-void 	    test_builtins_export_with_arguments(t_main prmtrs);
+void 	    test_builtin_env(t_main prmtrs);
+void 	    test_builtin_pwd(t_main prmtrs);
+void 	    test_builtin_unset(t_main prmtrs);
+void 	    test_builtin_export_without_arguments(t_main prmtrs);
+void 	    test_builtin_export_with_arguments(t_main prmtrs);
 void 		test_builtin_cd(t_main prmtrs);
 void 		test_builtin_echo(t_main prmtrs);
 

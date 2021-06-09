@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_builtins_env.c                                :+:      :+:    :+:   */
+/*   test_builtin_env.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <printf.h>
 
-void 	test_builtins_env(t_main prmtrs)
+void 	test_builtin_env(t_main prmtrs)
 {
 	// printf list without adding elements in env:
 	printf("-------------- ENV ORIGINAL -----------------\n");

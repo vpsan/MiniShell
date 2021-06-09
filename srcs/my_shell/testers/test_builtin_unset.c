@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_builtins_unset.c                              :+:      :+:    :+:   */
+/*   test_builtin_unset.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <printf.h>
 
-void 	test_builtins_unset(t_main prmtrs)
+void 	test_builtin_unset(t_main prmtrs)
 {
 	// adding A=0 to List_env and call env():
 	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='),1));

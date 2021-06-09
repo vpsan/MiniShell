@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 11:02:42 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 16:09:23 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 19:01:10 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <printf.h>
 
-void 	test_builtins_export_without_arguments(t_main prmtrs)
+void 	test_builtin_export_without_arguments(t_main prmtrs)
 {
 	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='), 0));
 	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("B", '='), 1));
@@ -31,7 +31,7 @@ void 	test_builtins_export_without_arguments(t_main prmtrs)
 	return ;
 }
 
-void 	test_builtins_export_with_arguments(t_main prmtrs)
+void 	test_builtin_export_with_arguments(t_main prmtrs)
 {
 	char **cmnd_words;
 	cmnd_words = (char **)malloc(sizeof(char *) * 5);
