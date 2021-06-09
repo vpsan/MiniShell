@@ -31,7 +31,7 @@ void 	test_builtin_cd(t_main prmtrs)
 //	cmnd_words[3] = NULL;
 //	cmnd_words[4] = NULL;
 
-	print_export_declare_x(prmtrs.env_head);
+//	print_export_declare_x(prmtrs.env_head);
 	builtin_cd(cmnd_words, prmtrs.env_head);
 	printf("______________________________\n");
 	printf("______________________________\n");
