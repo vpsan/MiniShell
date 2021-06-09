@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:06 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 19:58:29 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:06:11 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int 	print_export_declare_x(t_env_list *env_head)
 	t_env_list	*tmp;
 
 	tmp = env_head;
-	// tmp = env_lst_sort(tmp);
+	env_lstsort_bubble(tmp);
 	while(tmp != NULL)
 	{
 		printf("declare -x ");

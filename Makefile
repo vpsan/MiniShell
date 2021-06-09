@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/09 19:08:18 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/09 22:09:59 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -134,7 +134,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						$(BUILTINS_DIR)builtin_exit.c\
 						\
 						$(ENV)create_env_lst.c\
-						$(ENV)env_lst_sort.c\
+						$(ENV)env_lstsort_bubble.c\
                         $(ENV)env_lstnew.c\
                         $(ENV)env_lstadd_front.c\
                         $(ENV)env_lstdelone.c\
@@ -147,7 +147,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(ENV)getvalue_env_lst.c\
                         $(ENV)updatevalue_env_lst.c\
                         \
-						$(TESTERS)test_env_add.c\
+						$(TESTERS)test_env_lstsort_bubble.c\
                         $(TESTERS)test_printf_all_env_lst.c\
                         $(TESTERS)test_updatevalue_env_lst.c\
                         $(TESTERS)test_builtin_env.c\

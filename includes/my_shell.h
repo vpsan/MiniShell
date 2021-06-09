@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 19:38:48 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:11:28 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		    my_shell(t_main *prtmtrs);
 
 // // // // ENV:
 void	    create_env_lst(t_main *prmtrs, char **env);
-t_env_list	*env_lst_sort(t_env_list *c);
+void 		env_lstsort_bubble(t_env_list *env_head);
 t_env_list	*env_lstnew(char **env_arr, int declare_flag);
 void        env_lstadd_front(t_env_list **lst, t_env_list *new);
 int		    env_lstsize(t_env_list *lst);
@@ -45,7 +45,7 @@ void        updatevalue_env_lst(char *name, char *malloced_new_value, t_env_list
 int         builtin_env(t_main *prmtrs);
 int         builtin_unset(char *cmnd_str, char **cmnd_words, t_env_list *env_head);
 int     	builtin_export(char **cmnd_words, t_env_list *env_head);
-int 	print_export_declare_x(t_env_list *env_head);
+int 	    print_export_declare_x(t_env_list *env_head);
 int	    	builtin_pwd(void);
 int     	builtin_exit(char **cmnd_words);
 int     	builtin_cd(char **cmnd_words, t_env_list* env_head);
@@ -53,7 +53,7 @@ int     	builtin_echo(char **cmnd_words);
 
 // // // //	TESTERS:
 // // // //	FOR ENV:
-void 	    test_env_add(t_main prmtrs);
+void 	    test_env_lstsort_bubble(t_main prmtrs);
 void    	test_printf_all_env_lst(t_env_list *env_head);
 void 		test_updatevalue_env_lst(t_main prmtrs);
 // // // //	FOR BUILTINS:

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 20:31:47 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:12:19 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	main(int argc, char **argv, char **env)
 	(void)argv;
 	create_env_lst(&prmtrs, env);
 
-	// test_env_add(prmtrs);							// leaks OK
-										 			// // leaks KO - env_lst_sort()
+	// test_env_lstsort_bubble(prmtrs);					// leaks OK
 	// test_updatevalue_env_lst(prmtrs);				// leaks OK
 	// test_builtin_env(prmtrs);						// leaks OK
 	// test_builtin_unset(prmtrs);						// leaks OK
@@ -39,6 +38,6 @@ int	main(int argc, char **argv, char **env)
 
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");
-	sleep(30);
+	// sleep(30);
 	return (0);
 }
