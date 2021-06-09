@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 17:01:20 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 11:46:03 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		    my_shell(t_main *prtmtrs);
 
 // // // // ENV:
 void	    create_env_lst(t_main *prmtrs, char **env);
-t_env_list	*env_lst_sort(t_env_list * c );
+t_env_list	*env_lst_sort(t_env_list *c);
 t_env_list	*env_lstnew(char **env_arr, int declare_flag);
 void        env_lstadd_front(t_env_list **lst, t_env_list *new);
 int		    env_lstsize(t_env_list *lst);
@@ -38,7 +38,7 @@ void	    env_lstdelone(t_env_list *lst, void *(*del)(char ***arr));
 void	    env_lstclear(t_env_list **lst, void *(*del)(char ***arr));
 void	    env_lstiter(t_env_list *lst, void (*f)(void *));
 t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *), void *(*del)(char ***arr));
-char        *getvalue_env_lst(char *name, t_env_list *lst);
+char        *getvalue_env_lst(char *name, t_env_list *env_head);
 
 // // // //	BUILTINS:
 int         builtin_env(t_main *prmtrs);
