@@ -54,14 +54,15 @@ int     	builtin_echo(char **cmnd_words);
 // // // //	TESTERS:
 // // // //	FOR ENV:
 void 	    test_env_add(t_main prmtrs);
-void    	test_printf_all_List_env(t_env_list *env_head);
+void    	test_printf_all_env_lst(t_env_list *env_head);
+void 		test_updatevalue_env_lst(t_main prmtrs);
 // // // //	FOR BUILTINS:
 void 	    test_builtins_env(t_main prmtrs);
 void 	    test_builtins_pwd(t_main prmtrs);
 void 	    test_builtins_unset(t_main prmtrs);
 void 	    test_builtins_export_without_arguments(t_main prmtrs);
 void 	    test_builtins_export_with_arguments(t_main prmtrs);
-void 		test_updatevalue_env_lst(t_main prmtrs);
 void 		test_builtin_cd(t_main prmtrs);
+void 		test_builtin_echo(t_main prmtrs);
 
 #endif

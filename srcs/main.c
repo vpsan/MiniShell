@@ -34,9 +34,11 @@ int	main(int argc, char **argv, char **env)
 	// test_builtins_export_with_arguments(prmtrs);
 	// test_updatevalue_env_lst(prmtrs);
 	// test_builtin_cd(prmtrs);
+	// test_builtin_echo(prmtrs);
+	test_printf_all_env_lst(prmtrs.env_head);
 
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");
-	// sleep(30);
+//	 sleep(30);
 	return (0);
 }

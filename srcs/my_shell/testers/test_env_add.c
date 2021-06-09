@@ -18,7 +18,7 @@ void 	test_env_add(t_main prmtrs)
 {
 	{
 		printf("/////////// PRINT LIST_ENV BEFORE SORT AND ADDING /////////\n");
-		test_printf_all_List_env(prmtrs.env_head);
+		test_printf_all_env_lst(prmtrs.env_head);
 	}
 
 	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='),
@@ -33,7 +33,7 @@ void 	test_env_add(t_main prmtrs)
 	prmtrs.env_head = env_lst_sort(prmtrs.env_head);
 	{
 		printf("/////////// PRINT LIST_ENV AFTER SORT AND ADDING /////////\n");
-		test_printf_all_List_env(prmtrs.env_head);
+		test_printf_all_env_lst(prmtrs.env_head);
 	}
     return ;
 }

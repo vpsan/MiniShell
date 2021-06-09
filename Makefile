@@ -148,12 +148,13 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(ENV)updatevalue_env_lst.c\
                         \
 						$(TESTERS)test_env_add.c\
-                        $(TESTERS)test_printf_all_List_env.c\
+                        $(TESTERS)test_printf_all_env_lst.c\
+                        $(TESTERS)test_updatevalue_env_lst.c\
                         $(TESTERS)test_builtins_env.c\
                         $(TESTERS)test_builtins_unset.c\
                         $(TESTERS)test_builtins_export.c\
-                        $(TESTERS)test_updatevalue_env_lst.c\
                         $(TESTERS)test_builtin_cd.c\
+                        $(TESTERS)test_builtin_echo.c\
 
 # ***************************************************************************** #
 

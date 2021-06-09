@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_printf_all_List_env.c                         :+:      :+:    :+:   */
+/*   test_printf_all_env_lst.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <printf.h>
 
-void	test_printf_all_List_env(t_env_list *env_head)
+void	test_printf_all_env_lst(t_env_list *env_head)
 {
 	t_env_list	*tmp;
 	int		number_i;
