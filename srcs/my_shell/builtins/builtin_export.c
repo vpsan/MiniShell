@@ -17,7 +17,7 @@ int 	print_export_declare_x(t_env_list *env_head)
 	t_env_list	*tmp;
 	int			fd;
 
-	fd = 1;
+
 	env_lstsort_bubble(env_head);
 	tmp = env_head;
 	while(tmp != NULL)

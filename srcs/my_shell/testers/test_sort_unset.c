@@ -3,8 +3,11 @@
 void 	test_sort_unset(t_main prmtrs)
 {
 	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("A=0"),1));
+	printf("========================================= TEST 1\n\n");
+	test_printf_all_env_lst(prmtrs.env_head);
 	env_lstsort_bubble(prmtrs.env_head);
-
+	printf("========================================= TEST 2\n\n");
+	test_printf_all_env_lst(prmtrs.env_head);
 
 	char **cmnd_words;
 	cmnd_words = (char **)malloc(sizeof(char *) * 9);
@@ -18,7 +21,8 @@ void 	test_sort_unset(t_main prmtrs)
 	cmnd_words[7] = ft_strdup("B\0");
 	cmnd_words[8] = NULL;
 
-	printf("TEST 1\n");
+	printf("========================================= TEST 3\n\n");
 	builtin_unset(cmnd_words, prmtrs.env_head);
+	test_printf_all_env_lst(prmtrs.env_head);
 	return ;
 }

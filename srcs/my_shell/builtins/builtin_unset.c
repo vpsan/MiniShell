@@ -12,22 +12,61 @@
 
 #include "my_shell.h"
 
- void	unset_delete_lst_element(char *s, t_env_list *env_head)
+int 		count_words_in_arr(char **arr)
+{
+	int	i;
+
+	while (*arr != NULL)
+	{
+		arr++;
+		i++;
+	}
+	return (i);
+}
+
+t_env_list *creat_env_head_copy(t_env_list *env_head)
+{
+	t_env_list	*new_env_head;
+	char		**new_arr;
+	int 		n_words;
+
+	n_words = count_words_in_arr(env_head->env_arr);
+	new_arr = (char **)malloc(sizeof(char *) * (n_words + 1));
+	new_arr[n_words] = NULL;
+	if (n_words == 1)
+		new_arr[0] = ft_strdup(env_head->env_arr[0]);
+	else
+	{
+		new_arr[0] = ft_strdup(env_head->env_arr[0]);
+		new_arr[1] = ft_strdup(env_head->env_arr[1]);
+	}
+	new_env_head = env_lstnew(new_arr, env_head->declare_flag);
+	new_env_head->next = env_head->next;
+	return (new_env_head);
+}
+
+ void	unset_delete_lst_element(char *s, t_env_list **env_head)
  {
      t_env_list *tmp;
      t_env_list	*previous;
+     int 		first_iter;
 
-     tmp = env_head;
+     tmp = *env_head;
+     first_iter = 0;
      while (tmp != NULL)
      {
      	if (ft_strcmp(s, tmp->env_arr[0]) == 0)
      	{
-     		previous->next = tmp->next;
+     		if (first_iter == 0)
+				*env_head = creat_env_head_copy(tmp);
+     		else
+     			previous->next = tmp->next;
      		env_lstdelone(tmp, ft_free_str_arr);
      		break ;
      	}
      	previous = tmp;
      	tmp = tmp->next;
+     	first_iter++;
      }
      return ;
  }
@@ -67,7 +106,10 @@
              // ТУТ У ПАРНЕЙ ОБЫЧНО EXIT_SATUS прописывается
          }
          else
-             unset_delete_lst_element(cmnd_words[i], env_head);
+		 {
+         	unset_delete_lst_element(cmnd_words[i], &env_head);
+		 }
+
          i++;
      }
      return (0);

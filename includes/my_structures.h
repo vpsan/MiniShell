@@ -46,7 +46,7 @@ typedef struct  s_main
 	t_env_list		*env_head;
 	char 		*input;
 	t_prsng		prsng;
-	t_cmd		*cmnds;
+	t_cmd		**cmnds;
 	t_shell		shell;
 }               t_main;
 
