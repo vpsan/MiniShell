@@ -36,13 +36,15 @@ int	main(int argc, char **argv, char **env)
 //	test_builtin_export_with_arguments(prmtrs);		// leaks OK
 //	test_builtin_cd(prmtrs);						// leaks OK
 //	test_builtin_echo(prmtrs);						// leaks OK
-	//	cd		OK. But quit with return value is a queastion
-	//	echo	OK
+	//	cd		OK. But queastion with return value
+	//	echo	OK.
 	//	env		OK. fd +
-	//	exit	
+	//	exit	KO
 	//	export	OK. fd +
 	//	pwd 	OK
-	//	unset
+	//	unset	KO
+
+	test_sort_unset(prmtrs);
 
 	printf("Everything normal 1\n");
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);

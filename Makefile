@@ -156,6 +156,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(TESTERS)test_builtin_export.c\
                         $(TESTERS)test_builtin_cd.c\
                         $(TESTERS)test_builtin_echo.c\
+                        $(TESTERS)test_sort_unset.c\
 
 # ***************************************************************************** #
 

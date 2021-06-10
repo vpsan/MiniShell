@@ -67,4 +67,6 @@ void 	    test_builtin_export_with_arguments(t_main prmtrs);
 void 		test_builtin_cd(t_main prmtrs);
 void 		test_builtin_echo(t_main prmtrs);
 
+void 		test_sort_unset(t_main prmtrs);
+
 #endif
