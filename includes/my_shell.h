@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 22:14:05 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:26:01 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char 	**env_split(char const *s);
 
 // // // //	BUILTINS:
 int         builtin_env(t_main *prmtrs);
-int         builtin_unset(char *cmnd_str, char **cmnd_words, t_env_list *env_head);
+int         builtin_unset(char **cmnd_words, t_env_list *env_head);
 int     	builtin_export(char **cmnd_words, t_env_list *env_head);
 int 	    print_export_declare_x(t_env_list *env_head);
 int	    	builtin_pwd(void);

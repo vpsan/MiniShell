@@ -37,7 +37,7 @@ void 	test_builtin_unset(t_main prmtrs)
 	cmnd_words[7] = NULL;
 	cmnd_words[8] = NULL;
 
-	builtin_unset("unset A\0", cmnd_words, prmtrs.env_head);
+	builtin_unset(cmnd_words, prmtrs.env_head);
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/08 15:56:58 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:25:29 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	my_shell(t_main *prmtrs)
 {
-	
+	(void)prmtrs;
 	return (0);
 }

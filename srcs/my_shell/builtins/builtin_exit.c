@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 12:53:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 13:26:27 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:31:07 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int 	builtin_exit(char **cmnd_words)
 {
-
+	(void)cmnd_words;
 	return (0);
 }

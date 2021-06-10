@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 02:02:01 by bhatches          #+#    #+#             */
-/*   Updated: 2021/05/29 14:32:42 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:25:36 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	prsng_vldtn(t_main *prmtrs)
 {
-	
+	(void)prmtrs;
 	return (0);
 }

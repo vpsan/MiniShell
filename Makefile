@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/09 22:09:59 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/10 14:31:43 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -164,7 +164,7 @@ OBJ		=	$(SRCS:.c=.o)
 
 CC		=	gcc
 
-#CFLAGS	=	-Wall -Wextra -Werror -g
+# CFLAGS	=	-Wall -Wextra -Werror -g
 CFLAGS	=	-g
 OPTFLGS	=	-O2
 
