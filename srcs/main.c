@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 16:12:49 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:18:33 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ int	main(int argc, char **argv, char **env)
 	(void)argv;
 	create_env_lst(&prmtrs, env);
 
-	// test_env_split(prmtrs);							// leaks OK
-	// test_env_lstsort_bubble(prmtrs);					// leaks OK
-	// test_updatevalue_env_lst(prmtrs);				// leaks OK
-	// test_builtin_env(prmtrs);						// leaks OK
-	// test_builtin_unset(prmtrs);						// leaks OK
-	// test_builtin_export_without_arguments(prmtrs);	// leaks OK
-	// test_builtin_export_with_arguments(prmtrs);		// leaks OK
-	// test_builtin_cd(prmtrs);							// leaks OK
-	// test_builtin_echo(prmtrs);						// leaks OK
+//	test_env_split(prmtrs);							// leaks OK
+//	test_env_lstsort_bubble(prmtrs);				// leaks OK
+//	test_updatevalue_env_lst(prmtrs);				// leaks OK
+//	test_builtin_env(prmtrs);						// leaks OK
+//	test_builtin_unset(prmtrs);						// leaks OK
+//	test_builtin_export_without_arguments(prmtrs);	// leaks OK
+//	test_builtin_export_with_arguments(prmtrs);		// leaks OK
+//	test_builtin_cd(prmtrs);						// leaks OK
+//	test_builtin_echo(prmtrs);						// leaks OK
 	//	cd		OK. But quit with return value is a queastion
 	//	echo	OK
 	//	env		OK. fd +
@@ -44,8 +44,9 @@ int	main(int argc, char **argv, char **env)
 	//	pwd 	OK
 	//	unset
 
+	printf("Everything normal 1\n");
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
-	printf("Everything normal\n");
+	printf("Everything normal 2\n");
 	// sleep(30);
 	return (0);
 }
