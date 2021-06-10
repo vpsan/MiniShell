@@ -62,7 +62,6 @@ LIB 		= 		$(LIBFT_DIR)ft_memset.c\
               $(LIBFT_DIR)ft_strrchr.c\
               $(LIBFT_DIR)ft_strchr.c\
               $(LIBFT_DIR)ft_strncmp.c\
-              $(LIBFT_DIR)ft_strcmp.c\
               $(LIBFT_DIR)ft_strlcpy.c\
               $(LIBFT_DIR)ft_strlcat.c\
               $(LIBFT_DIR)ft_strnstr.c\
@@ -90,9 +89,9 @@ LIB 		= 		$(LIBFT_DIR)ft_memset.c\
               $(LIBFT_DIR)ft_lstmap.c\
               		$(LIBFT_DIR)ft_strlen_sep.c \
               $(LIBFT_DIR)ft_free_str.c \
-              $(LIBFT_DIR)ft_free_str_arr.c
-
-
+              $(LIBFT_DIR)ft_free_str_arr.c\
+              $(LIBFT_DIR)ft_strcmp.c\
+              $(LIBFT_DIR)ft_strdup_sep.c\
 
 # *********************** GET_NEXT_LINE *************************************** #
 
@@ -146,6 +145,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(ENV)env_lstmap.c\
                         $(ENV)getvalue_env_lst.c\
                         $(ENV)updatevalue_env_lst.c\
+                        $(ENV)env_split.c\
                         \
 						$(TESTERS)test_env_lstsort_bubble.c\
                         $(TESTERS)test_printf_all_env_lst.c\

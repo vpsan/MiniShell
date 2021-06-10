@@ -75,5 +75,6 @@ size_t				ft_strlen_sep(const char *str, int value);
 int					ft_free_str(char **s);
 void				*ft_free_str_arr(char ***arr);
 int					ft_strcmp(const char *str1, const char *str2);
+char				*ft_strdup_sep(const char *s1, int value);
 
 #endif

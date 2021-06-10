@@ -40,6 +40,7 @@ void	    env_lstiter(t_env_list *lst, void (*f)(void *));
 t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *), void *(*del)(char ***arr));
 char        *getvalue_env_lst(char *name, t_env_list *env_head);
 void        updatevalue_env_lst(char *name, char *malloced_new_value, t_env_list **env_head);
+char 	**env_split(char const *s);
 
 // // // //	BUILTINS:
 int         builtin_env(t_main *prmtrs);
@@ -64,5 +65,7 @@ void 	    test_builtin_export_without_arguments(t_main prmtrs);
 void 	    test_builtin_export_with_arguments(t_main prmtrs);
 void 		test_builtin_cd(t_main prmtrs);
 void 		test_builtin_echo(t_main prmtrs);
+
+void 	test_env_split(t_main prmtrs);
 
 #endif

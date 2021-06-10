@@ -53,7 +53,9 @@ BON		= env_lstnew.c\
 
 MyNew	= ft_strlen_sep.c \
 		  ft_free_str.c \
-		  ft_free_str_arr.c
+		  ft_free_str_arr.c\
+		  ft_strcmp.c\
+          ft_strdup_sep.c
 
 OBJ		= $(SRC:.c=.o)
 

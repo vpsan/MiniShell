@@ -43,8 +43,10 @@ int	main(int argc, char **argv, char **env)
 	//	pwd 	OK
 	//	unset
 
+	 test_env_split(prmtrs);
+
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");
-	// sleep(30);
+	 sleep(30);
 	return (0);
 }
