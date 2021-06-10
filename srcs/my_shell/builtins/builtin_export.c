@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:06 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 22:15:12 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:14:18 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int 	builtin_export(char **cmnd_words, t_env_list *env_head)
 		i = 1;
 		while (cmnd_words[i] != NULL)
 		{
-			arr = ft_split(cmnd_words[i], '=');
+			arr = env_split(cmnd_words[i]);
 			if (arr[1] == NULL)
 				env_lstadd_back(&env_head, env_lstnew(arr, 0));
 			else

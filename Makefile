@@ -150,6 +150,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
 						$(TESTERS)test_env_lstsort_bubble.c\
                         $(TESTERS)test_printf_all_env_lst.c\
                         $(TESTERS)test_updatevalue_env_lst.c\
+                        $(TESTERS)test_env_split.c\
                         $(TESTERS)test_builtin_env.c\
                         $(TESTERS)test_builtin_unset.c\
                         $(TESTERS)test_builtin_export.c\

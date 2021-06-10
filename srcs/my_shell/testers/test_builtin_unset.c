@@ -17,7 +17,7 @@
 void 	test_builtin_unset(t_main prmtrs)
 {
 	// adding A=0 to List_env and call env():
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='),1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("A=0"),1));
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");

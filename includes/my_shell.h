@@ -57,6 +57,7 @@ int     	builtin_echo(char **cmnd_words);
 void 	    test_env_lstsort_bubble(t_main prmtrs);
 void    	test_printf_all_env_lst(t_env_list *env_head);
 void 		test_updatevalue_env_lst(t_main prmtrs);
+void		test_env_split(t_main prmtrs);
 // // // //	FOR BUILTINS:
 void 	    test_builtin_env(t_main prmtrs);
 void 	    test_builtin_pwd(t_main prmtrs);
@@ -65,7 +66,5 @@ void 	    test_builtin_export_without_arguments(t_main prmtrs);
 void 	    test_builtin_export_with_arguments(t_main prmtrs);
 void 		test_builtin_cd(t_main prmtrs);
 void 		test_builtin_echo(t_main prmtrs);
-
-void 	test_env_split(t_main prmtrs);
 
 #endif

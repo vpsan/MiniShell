@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_builtins_export.c                             :+:      :+:    :+:   */
+/*   test_builtin_export.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 11:02:42 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 19:01:10 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 14:15:23 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 void 	test_builtin_export_without_arguments(t_main prmtrs)
 {
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("A=0", '='), 0));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("B", '='), 1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(ft_split("C=", '='), 1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("A=0"), 0));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("B"), 1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("C="), 1));
 
 	char **cmnd_words;
 	cmnd_words = (char **)malloc(sizeof(char *) * 3);
