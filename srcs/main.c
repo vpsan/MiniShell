@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 22:13:55 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/09 22:40:44 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ int	main(int argc, char **argv, char **env)
 	// test_builtin_export_with_arguments(prmtrs);		// leaks OK
 	// test_builtin_cd(prmtrs);							// leaks OK
 	// test_builtin_echo(prmtrs);						// leaks OK
+	//	cd		OK. But q with return value
+	//	echo	OK
+	//	env
+	//	exit
+	//	export
+	//	pwd 	OK
+	//	unset
 
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal\n");
