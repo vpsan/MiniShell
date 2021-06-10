@@ -24,10 +24,10 @@ void 	test_builtin_env(t_main prmtrs)
 	builtin_env(&prmtrs);
 
 	// printf list with adding elements in env:
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("A=0"),1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("a=1"),1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("b=1"),1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("c=2"),1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("W=www"),1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("X=xxx"),1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("Y="),1));
+	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("Z"),0));
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");

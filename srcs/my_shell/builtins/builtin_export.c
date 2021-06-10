@@ -6,27 +6,32 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:06 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 14:14:18 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:12:51 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
-#include <printf.h>
 
 int 	print_export_declare_x(t_env_list *env_head)
 {
 	t_env_list	*tmp;
+	int			fd;
 
+	fd = 1;
 	tmp = env_head;
 	env_lstsort_bubble(tmp);
 	while(tmp != NULL)
 	{
-		printf("declare -x ");
-		printf("%s=", tmp->env_arr[0]);
+		ft_putstr_fd("declare -x ", fd);
+		ft_putstr_fd(tmp->env_arr[0], fd);
 		if (tmp->env_arr[1] == NULL)
-			printf("\n");
+			ft_putstr_fd("\n", fd);
 		else
-			printf("%s\n", tmp->env_arr[1]);
+		{
+			ft_putstr_fd("=\"", fd);
+			ft_putstr_fd(tmp->env_arr[1], fd);
+			ft_putstr_fd("\"\n", fd);
+		}
 		tmp = tmp->next;
 	}
 	return (1);

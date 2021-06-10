@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 14:32:13 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:12:49 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ int	main(int argc, char **argv, char **env)
 	// test_builtin_echo(prmtrs);						// leaks OK
 	//	cd		OK. But quit with return value is a queastion
 	//	echo	OK
-	//	env
-	//	exit
-	//	export
+	//	env		OK. fd +
+	//	exit	
+	//	export	OK. fd +
 	//	pwd 	OK
 	//	unset
 

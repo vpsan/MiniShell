@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 22:03:26 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 22:22:51 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 16:07:03 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,15 @@ int 	do_while(t_env_list *env_head)
 	int			swapped;
 	t_env_list	*ptr1;
 	t_env_list	*lptr;
+	int			compare_res;
 
 	lptr = NULL;
 	swapped = 0;
 	ptr1 = env_head;
 	while (ptr1->next != lptr)
 	{
-		if (ptr1->env_arr[0][0] > ptr1->next->env_arr[0][0])
+		compare_res = ft_strcmp(ptr1->env_arr[0], ptr1->next->env_arr[0]);
+		if (compare_res > 0)
 		{
 			swap(ptr1, ptr1->next);
 			swapped = 1;

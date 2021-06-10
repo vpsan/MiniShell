@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 11:02:42 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 14:15:23 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/10 15:46:41 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void 	test_builtin_export_without_arguments(t_main prmtrs)
 void 	test_builtin_export_with_arguments(t_main prmtrs)
 {
 	char **cmnd_words;
-	cmnd_words = (char **)malloc(sizeof(char *) * 5);
+	cmnd_words = (char **)malloc(sizeof(char *) * 6);
 
 //	// example 1
 //	cmnd_words[0] = ft_strdup("export\0");
@@ -42,13 +42,15 @@ void 	test_builtin_export_with_arguments(t_main prmtrs)
 //	cmnd_words[2] = NULL;
 //	cmnd_words[3] = NULL;
 //	cmnd_words[4] = NULL;
+//	cmnd_words[5] = NULL;
 
-	// example 2
-	cmnd_words[0] = ft_strdup("export\0");
-	cmnd_words[1] = ft_strdup("A=0\0");
-	cmnd_words[2] = ft_strdup("B=\0");
-	cmnd_words[3] = ft_strdup("C\0");
-	cmnd_words[4] = NULL;
+	// // example 2
+	// cmnd_words[0] = ft_strdup("export\0");
+	// cmnd_words[1] = ft_strdup("A=0\0");
+	// cmnd_words[2] = ft_strdup("B=\0");
+	// cmnd_words[3] = ft_strdup("C\0");
+	// cmnd_words[4] = NULL;
+	// cmnd_words[5] = NULL;
 
 //	// example 3
 //	cmnd_words[0] = ft_strdup("export\0");
@@ -56,6 +58,15 @@ void 	test_builtin_export_with_arguments(t_main prmtrs)
 //	cmnd_words[2] = NULL;
 //	cmnd_words[3] = NULL;
 //	cmnd_words[4] = NULL;
+//	cmnd_words[5] = NULL;
+
+	// example 4
+	cmnd_words[0] = ft_strdup("export\0");
+	cmnd_words[1] = ft_strdup("AbC=0\0");
+	cmnd_words[2] = ft_strdup("ABC=0\0");
+	cmnd_words[3] = ft_strdup("a=0\0");
+	cmnd_words[4] = ft_strdup("ac=0\0");
+	cmnd_words[5] = NULL;
 
 	builtin_export(cmnd_words, prmtrs.env_head);
 	builtin_env(&prmtrs);
