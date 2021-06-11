@@ -12,21 +12,21 @@
 
 #include "my_shell.h"
 
-int     builtin_env(t_env_list *env_head, int out_fd)
+int	builtin_env(t_env_list *env_head, int out_fd)
 {
-    t_env_list  *tmp;
+	t_env_list	*tmp;
 
-    tmp = env_head;
-    while (tmp != NULL)
-    {
-        if (tmp->declare_flag != 0)
-        {
-            ft_putstr_fd(tmp->env_arr[0], out_fd);
-            ft_putstr_fd("=", out_fd);
-            ft_putstr_fd(tmp->env_arr[1], out_fd);
-            ft_putstr_fd("\n", out_fd);
-        }
-        tmp = tmp->next;
-    }
-    return (0);
+	tmp = env_head;
+	while (tmp != NULL)
+	{
+		if (tmp->declare_flag != 0)
+		{
+			ft_putstr_fd(tmp->env_arr[0], out_fd);
+			ft_putstr_fd("=", out_fd);
+			ft_putstr_fd(tmp->env_arr[1], out_fd);
+			ft_putstr_fd("\n", out_fd);
+		}
+		tmp = tmp->next;
+	}
+	return (0);
 }
