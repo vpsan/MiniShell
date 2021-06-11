@@ -30,13 +30,15 @@ int	main(int argc, char **argv, char **env)
 //	test_env_split();								// leaks OK
 //	test_env_lstsort_bubble(&prmtrs);				// leaks OK
 //	test_updatevalue_env_lst(&prmtrs);				// leaks OK
-//	test_builtin_env(&prmtrs);						// leaks OK
-//	test_builtin_unset(&prmtrs);					// leaks OK
-//	test_sort_unset(&prmtrs);						// leaks OK
-//	test_builtin_export_without_arguments(&prmtrs);	// leaks OK
-//	test_builtin_export_with_arguments(&prmtrs);	// leaks OK
+
 //	test_builtin_cd(&prmtrs);						// leaks OK
 //	test_builtin_echo();							// leaks OK
+//	test_builtin_env(&prmtrs);						// leaks OK
+//	test_builtin_export_without_arguments(&prmtrs);	// leaks OK
+//	test_builtin_export_with_arguments(&prmtrs);	// leaks OK
+//	test_builtin_unset(&prmtrs);					// leaks OK
+//	test_sort_unset(&prmtrs);						// leaks OK
+
 	//	cd		N.	fd no. 	But queastion with return value
 	//	echo	N.	fd yes. fd done +
 	//	env		N.	fd yes. fd done +
