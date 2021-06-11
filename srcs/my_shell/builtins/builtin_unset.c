@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:03:58 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 16:17:34 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/11 21:26:05 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_env_list *creat_env_head_copy(t_env_list *env_head)
      	if (ft_strcmp(s, tmp->env_arr[0]) == 0)
      	{
      		if (first_iter == 0)
-				*env_head = creat_env_head_copy(tmp);
+				*env_head = creat_env_head_copy(tmp->next);
      		else
      			previous->next = tmp->next;
      		env_lstdelone(tmp, ft_free_str_arr);
@@ -89,12 +89,10 @@ t_env_list *creat_env_head_copy(t_env_list *env_head)
      return (0);
  }
 
- int	builtin_unset(char **cmnd_words, t_env_list *env_head)
+ int	builtin_unset(char **cmnd_words, t_env_list **env_head)
  {
-     t_env_list *tmp;
      int     i;
 
-     tmp = env_head;
      i = 1;
      while (cmnd_words[i] != NULL)
      {
@@ -107,9 +105,8 @@ t_env_list *creat_env_head_copy(t_env_list *env_head)
          }
          else
 		 {
-         	unset_delete_lst_element(cmnd_words[i], &env_head);
+         	unset_delete_lst_element(cmnd_words[i], env_head);
 		 }
-
          i++;
      }
      return (0);

@@ -14,11 +14,11 @@
 #include "libft.h"
 #include <printf.h>
 
-void 	test_builtin_unset(t_main prmtrs)
+void 	test_builtin_unset(t_main *prmtrs)
 {
 	// adding A=0 to List_env and call env():
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("A=0"),1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("B=0"),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("A=0"),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("B=0"),1));
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
 	printf("-------------- ENV BEFORE UNSET -----------------\n");
@@ -26,7 +26,7 @@ void 	test_builtin_unset(t_main prmtrs)
 	// builtin_env(&prmtrs);
 //	test_printf_all_env_lst(prmtrs.env_head);
 //	print_export_declare_x(prmtrs.env_head);
-	env_lstsort_bubble(prmtrs.env_head);
+	env_lstsort_bubble(prmtrs->env_head);
 	printf("HELLO\n");
 
 	// deleting A=0 from List_env and call env():
@@ -42,14 +42,14 @@ void 	test_builtin_unset(t_main prmtrs)
 	cmnd_words[7] = ft_strdup("B\0");
 	cmnd_words[8] = NULL;
 
-	builtin_unset(cmnd_words, prmtrs.env_head);
+	builtin_unset(cmnd_words, &(prmtrs->env_head));
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	// builtin_env(&prmtrs);
 //		test_printf_all_env_lst(prmtrs.env_head);
-		print_export_declare_x(prmtrs.env_head);
+		print_export_declare_x(prmtrs->env_head);
 
 
 	printf("\n");

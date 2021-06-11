@@ -12,7 +12,7 @@
 
 #include "my_shell.h"
 
-void 	test_env_split(t_main prmtrs)
+void 	test_env_split(void)
 {
 	char *s = ft_strdup("123Aaaaa===1234");
 	char **arr = env_split(s);

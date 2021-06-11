@@ -12,7 +12,7 @@
 
 #include "my_shell.h"
 
-void 		test_builtin_echo(t_main prmtrs)
+void 		test_builtin_echo(void)
 {
 	char **cmnd_words;
 	cmnd_words = (char **)malloc(sizeof(char *) * 5);

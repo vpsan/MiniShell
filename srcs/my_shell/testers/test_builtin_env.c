@@ -14,24 +14,24 @@
 #include "libft.h"
 #include <printf.h>
 
-void 	test_builtin_env(t_main prmtrs)
+void 	test_builtin_env(t_main *prmtrs)
 {
 	// printf list without adding elements in env:
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n\n");
-	builtin_env(&prmtrs);
+	builtin_env(prmtrs);
 
 	// printf list with adding elements in env:
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("W=www"),1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("X=xxx"),1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("Y="),1));
-	env_lstadd_back(&prmtrs.env_head, env_lstnew(env_split("Z"),0));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("W=www"),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("X=xxx"),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("Y="),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("Z"),0));
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n\n");
-	builtin_env(&prmtrs);
+	builtin_env(prmtrs);
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 14:26:01 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/11 21:26:11 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char 	**env_split(char const *s);
 
 // // // //	BUILTINS:
 int         builtin_env(t_main *prmtrs);
-int         builtin_unset(char **cmnd_words, t_env_list *env_head);
+int         builtin_unset(char **cmnd_words, t_env_list **env_head);
 int     	builtin_export(char **cmnd_words, t_env_list *env_head);
 int 	    print_export_declare_x(t_env_list *env_head);
 int	    	builtin_pwd(void);
@@ -54,19 +54,19 @@ int     	builtin_echo(char **cmnd_words);
 
 // // // //	TESTERS:
 // // // //	FOR ENV:
-void 	    test_env_lstsort_bubble(t_main prmtrs);
+void		test_env_split(void);
+void 	    test_env_lstsort_bubble(t_main *prmtrs);
 void    	test_printf_all_env_lst(t_env_list *env_head);
-void 		test_updatevalue_env_lst(t_main prmtrs);
-void		test_env_split(t_main prmtrs);
+void 		test_updatevalue_env_lst(t_main *prmtrs);
 // // // //	FOR BUILTINS:
-void 	    test_builtin_env(t_main prmtrs);
+void 	    test_builtin_env(t_main *prmtrs);
 void 	    test_builtin_pwd(t_main prmtrs);
-void 	    test_builtin_unset(t_main prmtrs);
-void 	    test_builtin_export_without_arguments(t_main prmtrs);
-void 	    test_builtin_export_with_arguments(t_main prmtrs);
-void 		test_builtin_cd(t_main prmtrs);
-void 		test_builtin_echo(t_main prmtrs);
+void 	    test_builtin_unset(t_main *prmtrs);
+void 	    test_builtin_export_without_arguments(t_main *prmtrs);
+void 	    test_builtin_export_with_arguments(t_main *prmtrs);
+void 		test_builtin_cd(t_main *prmtrs);
+void 		test_builtin_echo(void);
 
-void 		test_sort_unset(t_main prmtrs);
+void 		test_sort_unset(t_main *prmtrs);
 
 #endif
