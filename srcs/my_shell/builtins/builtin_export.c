@@ -12,32 +12,30 @@
 
 #include "my_shell.h"
 
-int 	print_export_declare_x(t_env_list *env_head)
+int 	print_export_declare_x(t_env_list *env_head, int out_fd)
 {
 	t_env_list	*tmp;
-	int			fd;
-
 
 	env_lstsort_bubble(env_head);
 	tmp = env_head;
 	while(tmp != NULL)
 	{
-		ft_putstr_fd("declare -x ", fd);
-		ft_putstr_fd(tmp->env_arr[0], fd);
+		ft_putstr_fd("declare -x ", out_fd);
+		ft_putstr_fd(tmp->env_arr[0], out_fd);
 		if (tmp->env_arr[1] == NULL)
-			ft_putstr_fd("\n", fd);
+			ft_putstr_fd("\n", out_fd);
 		else
 		{
-			ft_putstr_fd("=\"", fd);
-			ft_putstr_fd(tmp->env_arr[1], fd);
-			ft_putstr_fd("\"\n", fd);
+			ft_putstr_fd("=\"", out_fd);
+			ft_putstr_fd(tmp->env_arr[1], out_fd);
+			ft_putstr_fd("\"\n", out_fd);
 		}
 		tmp = tmp->next;
 	}
 	return (1);
 }
 
-int 	builtin_export(char **cmnd_words, t_env_list *env_head)
+int 	builtin_export(char **cmnd_words, t_env_list *env_head, int out_fd)
 {
 	char 	**arr;
 	int		i;
@@ -45,7 +43,7 @@ int 	builtin_export(char **cmnd_words, t_env_list *env_head)
 
 	if (cmnd_words[1] == NULL)
 	{
-		print_export_declare_x(env_head);
+		print_export_declare_x(env_head, out_fd);
 		return (0);
 	}
 	else

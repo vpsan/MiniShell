@@ -25,7 +25,7 @@ void 	test_builtin_export_without_arguments(t_main *prmtrs)
 	cmnd_words[0] = NULL;
 	cmnd_words[1] = NULL;
 	cmnd_words[2] = NULL;
-	builtin_export(cmnd_words, prmtrs->env_head);
+	builtin_export(cmnd_words, prmtrs->env_head, 1);
 
 	ft_free_str_arr(&cmnd_words);
 	return ;
@@ -68,8 +68,8 @@ void 	test_builtin_export_with_arguments(t_main *prmtrs)
 	cmnd_words[4] = ft_strdup("ac=0\0");
 	cmnd_words[5] = NULL;
 
-	builtin_export(cmnd_words, prmtrs->env_head);
-	builtin_env(prmtrs);
+	builtin_export(cmnd_words, prmtrs->env_head, 1);
+	builtin_env(prmtrs->env_head, 1);
 
 	printf("-------------------------------\n");
 
@@ -77,7 +77,7 @@ void 	test_builtin_export_with_arguments(t_main *prmtrs)
 	NULL_arr = (char **)malloc(sizeof(char *) * 2);
 	NULL_arr[0] = ft_strdup("export\0");
 	NULL_arr[1] = NULL;
-	builtin_export(NULL_arr, prmtrs->env_head);
+	builtin_export(NULL_arr, prmtrs->env_head, 1);
 
 	ft_free_str_arr(&cmnd_words);
 	ft_free_str_arr(&NULL_arr);

@@ -49,7 +49,7 @@ void 	test_builtin_unset(t_main *prmtrs)
 	printf("-------------- ENV AFTER UNSET -----------------\n");
 	// builtin_env(&prmtrs);
 //		test_printf_all_env_lst(prmtrs.env_head);
-		print_export_declare_x(prmtrs->env_head);
+		print_export_declare_x(prmtrs->env_head, 1);
 
 
 	printf("\n");

@@ -31,7 +31,7 @@ int 	check_n_flag(char *str, int *flag)
 	return (false);
 }
 
-int 	builtin_echo(char **cmnd_words)
+int 	builtin_echo(char **cmnd_words, int out_fd)
 {
 	int	i;
 	int	flag;
@@ -42,11 +42,11 @@ int 	builtin_echo(char **cmnd_words)
 		i++;
 	while (cmnd_words[i] != NULL)
 	{
-		ft_putstr_fd(cmnd_words[i], 1);
+		ft_putstr_fd(cmnd_words[i], out_fd);
 		if (cmnd_words[i++] != NULL)
-			ft_putstr_fd(" ", 1);
+			ft_putstr_fd(" ", out_fd);
 	}
 	if (flag != 1)
-		ft_putstr_fd("\n", 1);
+		ft_putstr_fd("\n", out_fd);
 	return (0);
 }

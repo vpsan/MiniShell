@@ -52,7 +52,7 @@ void 		test_builtin_echo(void)
 //	cmnd_words[3] = ft_strdup("HELLO\0");
 //	cmnd_words[4] = NULL;
 
-	builtin_echo(cmnd_words);
+	builtin_echo(cmnd_words, 1);
 
 	ft_free_str_arr(&cmnd_words);
 	return ;

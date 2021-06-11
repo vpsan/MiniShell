@@ -27,27 +27,27 @@ int	main(int argc, char **argv, char **env)
 	(void)argv;
 	create_env_lst(&prmtrs, env);
 
-//	test_env_split();								// leaks OK
-//	test_env_lstsort_bubble(&prmtrs);				// leaks OK
-//	test_updatevalue_env_lst(&prmtrs);				// leaks OK
-//	test_builtin_env(&prmtrs);						// leaks OK
-//	test_builtin_unset(&prmtrs);					// leaks OK
-//	test_sort_unset(&prmtrs);						// leaks OK
-//	test_builtin_export_without_arguments(&prmtrs);	// leaks OK
-//	test_builtin_export_with_arguments(&prmtrs);	// leaks OK
-//	test_builtin_cd(&prmtrs);						// leaks OK
-//	test_builtin_echo();							// leaks OK
-	//	cd		OK. But queastion with return value
-	//	echo	OK.
-	//	env		OK. fd +
-	//	export	OK. fd +
-	//	pwd 	OK
-	//	unset	KO
+	test_env_split();								// leaks OK
+	test_env_lstsort_bubble(&prmtrs);				// leaks OK
+	test_updatevalue_env_lst(&prmtrs);				// leaks OK
+	test_builtin_env(&prmtrs);						// leaks OK
+	test_builtin_unset(&prmtrs);					// leaks OK
+	test_sort_unset(&prmtrs);						// leaks OK
+	test_builtin_export_without_arguments(&prmtrs);	// leaks OK
+	test_builtin_export_with_arguments(&prmtrs);	// leaks OK
+	test_builtin_cd(&prmtrs);						// leaks OK
+	test_builtin_echo();							// leaks OK
+	//	cd		OK. fd no. 	But queastion with return value
+	//	echo	OK.	fd yes. fd done +
+	//	env		OK. fd yes. fd done +
+	//	export	OK. fd yes. fd done	+
+	//	pwd 	OK. fd yes. fd done +
+	//	unset	OK. fd no.
 	//	exit
 
 	printf("Everything normal 1\n");
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("Everything normal 2\n");
-	sleep(10);
+//	sleep(10);
 	return (0);
 }

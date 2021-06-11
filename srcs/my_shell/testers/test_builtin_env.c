@@ -21,7 +21,7 @@ void 	test_builtin_env(t_main *prmtrs)
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n\n");
-	builtin_env(prmtrs);
+	builtin_env(prmtrs->env_head, 1);
 
 	// printf list with adding elements in env:
 	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("W=www"),1));
@@ -32,6 +32,6 @@ void 	test_builtin_env(t_main *prmtrs)
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n\n");
-	builtin_env(prmtrs);
+	builtin_env(prmtrs->env_head, 1);
 	return ;
 }

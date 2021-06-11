@@ -43,14 +43,14 @@ void        updatevalue_env_lst(char *name, char *malloced_new_value, t_env_list
 char 	**env_split(char const *s);
 
 // // // //	BUILTINS:
-int         builtin_env(t_main *prmtrs);
+int         builtin_env(t_env_list *env_head, int out_fd);
 int         builtin_unset(char **cmnd_words, t_env_list **env_head);
-int     	builtin_export(char **cmnd_words, t_env_list *env_head);
-int 	    print_export_declare_x(t_env_list *env_head);
-int	    	builtin_pwd(void);
+int     	builtin_export(char **cmnd_words, t_env_list *env_head, int out_fd);
+int 	    print_export_declare_x(t_env_list *env_head, int out_fd);
+int	    	builtin_pwd(int out_fd);
 int     	builtin_exit(char **cmnd_words);
 int     	builtin_cd(char **cmnd_words, t_env_list* env_head);
-int     	builtin_echo(char **cmnd_words);
+int     	builtin_echo(char **cmnd_words, int out_fd);
 
 // // // //	TESTERS:
 // // // //	FOR ENV:

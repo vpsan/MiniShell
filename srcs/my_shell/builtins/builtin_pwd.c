@@ -12,7 +12,7 @@
 
 #include "my_shell.h"
 
-int	builtin_pwd(void)
+int	builtin_pwd(int out_fd)
 {
 	char	*pwd_str;
 
@@ -24,7 +24,7 @@ int	builtin_pwd(void)
 		ft_putendl_fd(strerror(errno), 2);//errno
 		return (ERROR);
 	}
-	ft_putendl_fd(pwd_str, 1);
+	ft_putendl_fd(pwd_str, out_fd);
 	free(pwd_str);
 	return (0);
 }
