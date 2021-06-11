@@ -31,8 +31,8 @@ int	main(int argc, char **argv, char **env)
 //	test_env_lstsort_bubble(&prmtrs);				// leaks OK
 //	test_updatevalue_env_lst(&prmtrs);				// leaks OK
 //	test_builtin_env(&prmtrs);						// leaks OK
-//	test_builtin_unset(&prmtrs);					// leaks KO
-//	test_sort_unset(&prmtrs);						// leaks KO
+//	test_builtin_unset(&prmtrs);					// leaks OK
+//	test_sort_unset(&prmtrs);						// leaks OK
 //	test_builtin_export_without_arguments(&prmtrs);	// leaks OK
 //	test_builtin_export_with_arguments(&prmtrs);	// leaks OK
 //	test_builtin_cd(&prmtrs);						// leaks OK

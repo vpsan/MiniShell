@@ -58,7 +58,10 @@ t_env_list *creat_env_head_copy(t_env_list *env_head)
      	if (ft_strcmp(s, tmp->env_arr[0]) == 0)
      	{
      		if (first_iter == 0)
+			{
 				*env_head = creat_env_head_copy(tmp->next);
+				env_lstdelone(tmp->next, ft_free_str_arr);
+			}
      		else
      			previous->next = tmp->next;
      		env_lstdelone(tmp, ft_free_str_arr);
