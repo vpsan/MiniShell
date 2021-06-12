@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:03:58 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/11 21:26:05 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/12 11:05:55 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,9 +83,7 @@ int	check_word(char *s)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] == '-' /*||
-     		(ft_isalpha(s[i]) == false
-     			&& ft_isdigit(s[i]) == false)*/)
+		if (s[i] == '-' || s[i] == '=')
 			return (ERROR);
 		i++;
 	}

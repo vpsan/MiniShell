@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 16:18:33 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/12 11:12:14 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,32 @@ int	main(int argc, char **argv, char **env)
 	(void)argv;
 	create_env_lst(&prmtrs, env);
 
-//	test_env_split();								// leaks OK
-//	test_env_lstsort_bubble(&prmtrs);				// leaks OK
-//	test_updatevalue_env_lst(&prmtrs);				// leaks OK
 
-//	test_builtin_cd(&prmtrs);						// leaks OK // redone check
-//	test_builtin_echo();							// leaks OK
-//	test_builtin_env(&prmtrs);						// leaks OK
-//	test_builtin_export_without_arguments(&prmtrs);	// leaks OK
-//	test_builtin_export_with_arguments(&prmtrs);	// leaks OK
-//	test_builtin_unset(&prmtrs);					// leaks OK
-//	test_sort_unset(&prmtrs);						// leaks OK
+	// TESTERS t_env_list:
+	// test_env_split();								// leaks OK
+	// test_env_lstsort_bubble(&prmtrs);				// leaks OK
+	// test_updatevalue_env_lst(&prmtrs);				// leaks OK
+
+	// TESTERS builtin
+	// test_builtin_cd(&prmtrs);						// leaks OK
+	// test_builtin_echo();								// leaks OK
+	// test_builtin_env(&prmtrs);						// leaks OK
+	// test_builtin_export_without_arguments(&prmtrs);	// leaks OK
+	// test_builtin_export_with_arguments(&prmtrs);		// leaks OK
+	// test_builtin_unset(&prmtrs);						// leaks OK
+	// test_sort_unset(&prmtrs);						// leaks OK
 
 	//	cd		OK.	N.	fd no. 	But queastion with return value
 	//	echo	OK.	N.	fd yes. fd done +
 	//	env		OK.	N.	fd yes. fd done +
-	//	export	--.	N.	fd yes. fd done	+
+	//	export	OK.	N.	fd yes. fd done	+
 	//	pwd 	OK.	N.	fd yes. fd done +
-	//	unset	--.	N.	fd no.
+	//	unset	OK.	N.	fd no.
 	//	exit
 
-	printf("Everything normal 1\n");
+	printf("\n-------------------\nEverything normal 1\n");
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
-	printf("Everything normal 2\n");
+	printf("-------------------\nEverything normal 2\n-------------------\n");
 	sleep(10);
 	return (0);
 }

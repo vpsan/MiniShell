@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 20:04:06 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/10 16:12:51 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/12 11:08:37 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int 	print_export_declare_x(t_env_list *env_head, int out_fd)
 
 	env_lstsort_bubble(env_head);
 	tmp = env_head;
-	while(tmp != NULL)
+	while (tmp != NULL)
 	{
 		ft_putstr_fd("declare -x ", out_fd);
 		ft_putstr_fd(tmp->env_arr[0], out_fd);
@@ -32,30 +32,31 @@ int 	print_export_declare_x(t_env_list *env_head, int out_fd)
 		}
 		tmp = tmp->next;
 	}
-	return (1);
+	return (0);
 }
 
-int 	builtin_export(char **cmnd_words, t_env_list *env_head, int out_fd)
+int 	builtin_export(char **cmnd_words, t_env_list **env_head, int out_fd)
 {
-	char 	**arr;
+	char	**arr;
 	int		i;
-
+	char	*name;
 
 	if (cmnd_words[1] == NULL)
-	{
-		print_export_declare_x(env_head, out_fd);
-		return (0);
-	}
+		return (print_export_declare_x(*env_head, out_fd));
 	else
 	{
 		i = 1;
 		while (cmnd_words[i] != NULL)
 		{
+			name = ft_strdup_sep(cmnd_words[i], '=');
+			if (check_env_name_exists(name, *env_head) == true)
+				unset_delete_lst_element(name, env_head);
+			ft_free_str(&name);
 			arr = env_split(cmnd_words[i]);
 			if (arr[1] == NULL)
-				env_lstadd_back(&env_head, env_lstnew(arr, 0));
+				env_lstadd_back(env_head, env_lstnew(arr, 0));
 			else
-				env_lstadd_back(&env_head, env_lstnew(arr, 1));
+				env_lstadd_back(env_head, env_lstnew(arr, 1));
 			i++;
 		}
 	}

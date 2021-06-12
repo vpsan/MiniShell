@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/11 21:26:11 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/12 11:08:33 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,15 @@ void	    env_lstiter(t_env_list *lst, void (*f)(void *));
 t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *), void *(*del)(char ***arr));
 char        *getvalue_env_lst(char *name, t_env_list *env_head);
 void        updatevalue_env_lst(char *name, char *malloced_new_value, t_env_list **env_head);
-char 	**env_split(char const *s);
+char        **env_split(char const *s);
+int         check_env_name_exists(char *name, t_env_list *env_head);
 
+
+void	unset_delete_lst_element(char *s, t_env_list **env_head);
 // // // //	BUILTINS:
 int         builtin_env(t_env_list *env_head, int out_fd);
 int         builtin_unset(char **cmnd_words, t_env_list **env_head);
-int     	builtin_export(char **cmnd_words, t_env_list *env_head, int out_fd);
+int     	builtin_export(char **cmnd_words, t_env_list **env_head, int out_fd);
 int 	    print_export_declare_x(t_env_list *env_head, int out_fd);
 int	    	builtin_pwd(int out_fd);
 int     	builtin_exit(char **cmnd_words);

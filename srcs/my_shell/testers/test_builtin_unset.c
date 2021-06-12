@@ -16,20 +16,20 @@
 
 void 	test_builtin_unset(t_main *prmtrs)
 {
-	// adding A=0 to List_env and call env():
+	printf("-------------- ENV BEFORE UNSET -----------------\n");
+	printf("-------------- ENV BEFORE UNSET -----------------\n");
+	printf("-------------- ENV BEFORE UNSET -----------------\n");
+	printf("-------------- ENV BEFORE UNSET -----------------\n");
+	// adding to List_env:
 	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("A=0"),1));
 	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("B=0"),1));
-	printf("-------------- ENV BEFORE UNSET -----------------\n");
-	printf("-------------- ENV BEFORE UNSET -----------------\n");
-	printf("-------------- ENV BEFORE UNSET -----------------\n");
-	printf("-------------- ENV BEFORE UNSET -----------------\n");
-	// builtin_env(&prmtrs);
-//	test_printf_all_env_lst(prmtrs.env_head);
-//	print_export_declare_x(prmtrs.env_head);
-	env_lstsort_bubble(prmtrs->env_head);
-	printf("HELLO\n");
+	print_export_declare_x(prmtrs->env_head, 1);
 
-	// deleting A=0 from List_env and call env():
+	printf("-------------- ENV AFTER UNSET -----------------\n");
+	printf("-------------- ENV AFTER UNSET -----------------\n");
+	printf("-------------- ENV AFTER UNSET -----------------\n");
+	printf("-------------- ENV AFTER UNSET -----------------\n");
+	// deleting from List_env:
 	char **cmnd_words;
 	cmnd_words = (char **)malloc(sizeof(char *) * 9);
 	cmnd_words[0] = ft_strdup("unset\0");
@@ -41,18 +41,9 @@ void 	test_builtin_unset(t_main *prmtrs)
 	cmnd_words[6] = ft_strdup("=\0");//doesnt work
 	cmnd_words[7] = ft_strdup("B\0");
 	cmnd_words[8] = NULL;
-
 	builtin_unset(cmnd_words, &(prmtrs->env_head));
-	printf("-------------- ENV AFTER UNSET -----------------\n");
-	printf("-------------- ENV AFTER UNSET -----------------\n");
-	printf("-------------- ENV AFTER UNSET -----------------\n");
-	printf("-------------- ENV AFTER UNSET -----------------\n");
-	// builtin_env(&prmtrs);
-//		test_printf_all_env_lst(prmtrs.env_head);
-		print_export_declare_x(prmtrs->env_head, 1);
+	print_export_declare_x(prmtrs->env_head, 1);
 
-
-	printf("\n");
 	ft_free_str_arr(&cmnd_words);
 	return ;
 }

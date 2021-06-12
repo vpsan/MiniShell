@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/10 14:31:43 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/12 11:03:08 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -146,6 +146,7 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(ENV)getvalue_env_lst.c\
                         $(ENV)updatevalue_env_lst.c\
                         $(ENV)env_split.c\
+                        $(ENV)check_env_name_exists.c\
                         \
 						$(TESTERS)test_env_lstsort_bubble.c\
                         $(TESTERS)test_printf_all_env_lst.c\
