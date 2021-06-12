@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/12 11:08:33 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/12 12:26:32 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,53 +23,71 @@
 
 # define ERROR -1
 
-// // // //	MY_SHELL:
-int		    my_shell(t_main *prtmtrs);
+/*
+**	MAIN MY_SHELL FUNCTION:
+*/
 
-// // // // ENV:
-void	    create_env_lst(t_main *prmtrs, char **env);
-void 		env_lstsort_bubble(t_env_list *env_head);
+int			my_shell(t_main *prtmtrs);
+
+/*
+**	ENV:
+*/
+
+void		create_env_lst(t_main *prmtrs, char **env);
+void		env_lstsort_bubble(t_env_list *env_head);
 t_env_list	*env_lstnew(char **env_arr, int declare_flag);
-void        env_lstadd_front(t_env_list **lst, t_env_list *new);
-int		    env_lstsize(t_env_list *lst);
-t_env_list  *env_lstlast(t_env_list *lst);
-void	    env_lstadd_back(t_env_list **lst, t_env_list *new);
-void	    env_lstdelone(t_env_list *lst, void *(*del)(char ***arr));
-void	    env_lstclear(t_env_list **lst, void *(*del)(char ***arr));
-void	    env_lstiter(t_env_list *lst, void (*f)(void *));
-t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *), void *(*del)(char ***arr));
-char        *getvalue_env_lst(char *name, t_env_list *env_head);
-void        updatevalue_env_lst(char *name, char *malloced_new_value, t_env_list **env_head);
-char        **env_split(char const *s);
-int         check_env_name_exists(char *name, t_env_list *env_head);
+void		env_lstadd_front(t_env_list **lst, t_env_list *new);
+int			env_lstsize(t_env_list *lst);
+t_env_list	*env_lstlast(t_env_list *lst);
+void		env_lstadd_back(t_env_list **lst, t_env_list *new);
+void		env_lstdelone(t_env_list *lst, void *(*del)(char ***arr));
+void		env_lstclear(t_env_list **lst, void *(*del)(char ***arr));
+void		env_lstiter(t_env_list *lst, void (*f)(void *));
+t_env_list	*env_lstmap(t_env_list *lst, void *(*f)(void *),
+				void *(*del)(char ***arr));
+char		*getvalue_env_lst(char *name, t_env_list *env_head);
+void		updatevalue_env_lst(char *name, char *malloced_new_value,
+				t_env_list **env_head);
+char		**env_split(char const *s);
+int			check_env_name_exists(char *name, t_env_list *env_head);
 
+/*
+**	BUILTINS:
+*/
 
-void	unset_delete_lst_element(char *s, t_env_list **env_head);
-// // // //	BUILTINS:
-int         builtin_env(t_env_list *env_head, int out_fd);
-int         builtin_unset(char **cmnd_words, t_env_list **env_head);
-int     	builtin_export(char **cmnd_words, t_env_list **env_head, int out_fd);
-int 	    print_export_declare_x(t_env_list *env_head, int out_fd);
-int	    	builtin_pwd(int out_fd);
-int     	builtin_exit(char **cmnd_words);
-int     	builtin_cd(char **cmnd_words, t_env_list* env_head);
-int     	builtin_echo(char **cmnd_words, int out_fd);
+int			builtin_env(t_env_list *env_head, int out_fd);
+int			builtin_unset(char **cmnd_words, t_env_list **env_head);
+void		unset_delete_lst_element(char *s, t_env_list **env_head);
+int			builtin_export(char **cmnd_words, t_env_list **env_head,
+				int out_fd);
+int			print_export_declare_x(t_env_list *env_head, int out_fd);
+int			builtin_pwd(int out_fd);
+int			builtin_exit(char **cmnd_words);
+int			builtin_cd(char **cmnd_words, t_env_list *env_head);
+int			builtin_echo(char **cmnd_words, int out_fd);
 
-// // // //	TESTERS:
-// // // //	FOR ENV:
+/*
+**	TESTERS
+**	FOR ENV:
+*/
+
 void		test_env_split(void);
-void 	    test_env_lstsort_bubble(t_main *prmtrs);
-void    	test_printf_all_env_lst(t_env_list *env_head);
-void 		test_updatevalue_env_lst(t_main *prmtrs);
-// // // //	FOR BUILTINS:
-void 	    test_builtin_env(t_main *prmtrs);
-void 	    test_builtin_pwd(t_main prmtrs);
-void 	    test_builtin_unset(t_main *prmtrs);
-void 	    test_builtin_export_without_arguments(t_main *prmtrs);
-void 	    test_builtin_export_with_arguments(t_main *prmtrs);
-void 		test_builtin_cd(t_main *prmtrs);
-void 		test_builtin_echo(void);
+void		test_env_lstsort_bubble(t_main *prmtrs);
+void		test_printf_all_env_lst(t_env_list *env_head);
+void		test_updatevalue_env_lst(t_main *prmtrs);
 
-void 		test_sort_unset(t_main *prmtrs);
+/*
+**	TESTERS
+**	FOR BUILTINS:
+*/
+
+void		test_builtin_env(t_main *prmtrs);
+void		test_builtin_pwd(t_main prmtrs);
+void		test_builtin_unset(t_main *prmtrs);
+void		test_sort_unset(t_main *prmtrs);
+void		test_builtin_export_without_arguments(t_main *prmtrs);
+void		test_builtin_export_with_arguments(t_main *prmtrs);
+void		test_builtin_cd(t_main *prmtrs);
+void		test_builtin_echo(void);
 
 #endif

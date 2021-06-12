@@ -42,6 +42,7 @@ int	main(int argc, char **argv, char **env)
 	// test_builtin_unset(&prmtrs);						// leaks OK
 	// test_sort_unset(&prmtrs);						// leaks OK
 
+	//	My notes:::
 	//	cd		OK.	N.	fd no. 	But queastion with return value
 	//	echo	OK.	N.	fd yes. fd done +
 	//	env		OK.	N.	fd yes. fd done +
