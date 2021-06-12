@@ -16,22 +16,22 @@
 
 void 	test_builtin_env(t_main *prmtrs)
 {
-	// printf list without adding elements in env:
+	// Printf list without adding elements in env:
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n");
 	printf("-------------- ENV ORIGINAL -----------------\n\n");
 	builtin_env(prmtrs->env_head, 1);
 
-	// printf list with adding elements in env:
-	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("W=www"),1));
-	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("X=xxx"),1));
-	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("Y="),1));
-	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("Z"),0));
+	// Printf list with adding elements in env:
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n");
 	printf("-------------- ENV WITH ADDING ---------------\n\n");
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("W=www"),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("X=xxx"),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("Y="),1));
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("Z"),0));
 	builtin_env(prmtrs->env_head, 1);
 	return ;
 }

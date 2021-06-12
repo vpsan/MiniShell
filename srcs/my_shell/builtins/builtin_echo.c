@@ -43,7 +43,7 @@ int 	builtin_echo(char **cmnd_words, int out_fd)
 	while (cmnd_words[i] != NULL)
 	{
 		ft_putstr_fd(cmnd_words[i], out_fd);
-		if (cmnd_words[i++] != NULL)
+		if (cmnd_words[++i] != NULL)
 			ft_putstr_fd(" ", out_fd);
 	}
 	if (flag != 1)

@@ -22,7 +22,7 @@ char	*getvalue_env_lst(char *name, t_env_list *env_head)
 		if (ft_strcmp(name, tmp->env_arr[0]) == 0)
 		{
 			if (tmp->env_arr[1] != NULL)
-				return (tmp->env_arr[1]);
+				return (ft_strdup(tmp->env_arr[1]));
 		}
 		tmp = tmp->next;
 	}

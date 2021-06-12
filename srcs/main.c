@@ -31,7 +31,7 @@ int	main(int argc, char **argv, char **env)
 //	test_env_lstsort_bubble(&prmtrs);				// leaks OK
 //	test_updatevalue_env_lst(&prmtrs);				// leaks OK
 
-//	test_builtin_cd(&prmtrs);						// leaks OK
+//	test_builtin_cd(&prmtrs);						// leaks OK // redone check
 //	test_builtin_echo();							// leaks OK
 //	test_builtin_env(&prmtrs);						// leaks OK
 //	test_builtin_export_without_arguments(&prmtrs);	// leaks OK
@@ -39,12 +39,12 @@ int	main(int argc, char **argv, char **env)
 //	test_builtin_unset(&prmtrs);					// leaks OK
 //	test_sort_unset(&prmtrs);						// leaks OK
 
-	//	cd		N.	fd no. 	But queastion with return value
-	//	echo	N.	fd yes. fd done +
-	//	env		N.	fd yes. fd done +
-	//	export	N.	fd yes. fd done	+
-	//	pwd 	N.	fd yes. fd done +
-	//	unset	N.	fd no.
+	//	cd		OK.	N.	fd no. 	But queastion with return value
+	//	echo	OK.	N.	fd yes. fd done +
+	//	env		OK.	N.	fd yes. fd done +
+	//	export	--.	N.	fd yes. fd done	+
+	//	pwd 	OK.	N.	fd yes. fd done +
+	//	unset	--.	N.	fd no.
 	//	exit
 
 	printf("Everything normal 1\n");

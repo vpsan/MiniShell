@@ -31,12 +31,12 @@ void 		test_builtin_echo(void)
 //	cmnd_words[3] = NULL;
 //	cmnd_words[4] = NULL;
 
-	// example 2
-	cmnd_words[0] = ft_strdup("echo\0");
-	cmnd_words[1] = ft_strdup("HELLO\0");
-	cmnd_words[2] = ft_strdup("NAME\0");
-	cmnd_words[3] = NULL;
-	cmnd_words[4] = NULL;
+//	// example 2
+//	cmnd_words[0] = ft_strdup("echo\0");
+//	cmnd_words[1] = ft_strdup("HELLO\0");
+//	cmnd_words[2] = ft_strdup("NAME\0");
+//	cmnd_words[3] = NULL;
+//	cmnd_words[4] = NULL;
 
 //	// example 3
 //	cmnd_words[0] = ft_strdup("echo\0");
@@ -50,6 +50,13 @@ void 		test_builtin_echo(void)
 //	cmnd_words[1] = ft_strdup("-nnnn\0");
 //	cmnd_words[2] = ft_strdup("-nnnn\0");
 //	cmnd_words[3] = ft_strdup("HELLO\0");
+//	cmnd_words[4] = NULL;
+
+//	// example 5
+//	cmnd_words[0] = ft_strdup("echo\0");
+//	cmnd_words[1] = ft_strdup("-nnnn\0");
+//	cmnd_words[2] = ft_strdup("HELLO\0");
+//	cmnd_words[3] = ft_strdup("NAME\0");
 //	cmnd_words[4] = NULL;
 
 	builtin_echo(cmnd_words, 1);
