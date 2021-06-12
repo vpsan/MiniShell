@@ -16,6 +16,7 @@ int	count_words_in_arr(char **arr)
 {
 	int	i;
 
+	i = 0;
 	while (*arr != NULL)
 	{
 		arr++;
