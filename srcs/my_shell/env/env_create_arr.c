@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 17:03:13 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/14 17:49:33 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/14 18:54:23 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ static char *create_line_from_NameValue(t_env_list *tmp)
     char    *result_1st_join;
     char    *result_2nd_join;
 
-    if (tmp->env_arr[1] == NULL)
-        return (strdup(tmp->env_arr[0]));
-    else if (ft_strlen(tmp->env_arr[1]) == 0)
+    if (ft_strlen(tmp->env_arr[1]) == 0)
        return (ft_strjoin(tmp->env_arr[0], "="));
     else
     {
@@ -30,21 +28,41 @@ static char *create_line_from_NameValue(t_env_list *tmp)
     }
 }
 
+static int  count_how_many_to_malloc(t_env_list *env_head)
+{
+    int count;
+
+    count = 0;
+    while (env_head != NULL)
+    {
+        if (env_head->declare_flag == 1)
+            count++;
+        env_head = env_head->next;
+    }
+    return (count);
+}
+
 char		**env_create_arr(t_env_list *env_head)
 {
     char        **env;
     t_env_list  *tmp;
 	int 		i;
 
-    env = (char **)malloc(sizeof(char *) * (env_lstsize(env_head) + 1));
+    i = count_how_many_to_malloc(env_head);
+    env = (char **)malloc(sizeof(char *) * (i + 1));
+    env[i] = NULL;
     tmp = env_head;
     i = 0;
     while (tmp != NULL)
     {
+        if (tmp->declare_flag == 0)
+        {
+            tmp = tmp->next;
+            continue ;
+        }
         env[i] = create_line_from_NameValue(tmp);
         i++;
         tmp = tmp->next;
     }
-    env[i] = NULL;
     return (env);
 }

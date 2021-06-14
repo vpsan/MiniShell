@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 17:31:20 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/14 17:47:58 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/14 18:53:53 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		test_env_create_arr(t_main *prmtrs)
     env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("new1=1"),1));
 	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("new2=2"),1));
 	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("new3="),1));
-	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("new4"),1));    
+	env_lstadd_back(&prmtrs->env_head, env_lstnew(env_split("new4"),0));
 
     string_arr = env_create_arr(prmtrs->env_head);
     int i = 0;
