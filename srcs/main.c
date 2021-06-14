@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/14 13:54:22 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/14 16:32:53 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 void	putstr_greeting(void)
 {
+	ft_putstr_fd("\033[0;33m", 1);
 	ft_putstr_fd("                             __         ____\n", 1);
 	ft_putstr_fd("    ____ ___  __  __   _____/ /_  _____/ / / \n", 1);
 	ft_putstr_fd("   / __ `__ \\/ / / /  / ___/ __ \\/ ___/ / /\n", 1);
@@ -27,6 +28,7 @@ void	putstr_greeting(void)
 	ft_putstr_fd(" /_/ /_/ /_/\\__, /  /____/_/ /_/____/_/_/\n", 1);
 	ft_putstr_fd("           /____/                         ....is now available for you!\n", 1);
 	ft_putstr_fd("\n\n\n", 1);
+	ft_putstr_fd("\033[0m", 1);
 	return ;
 }
 
@@ -53,15 +55,6 @@ int	main(int argc, char **argv, char **env)
 	// test_builtin_export_with_arguments(&prmtrs);		// leaks OK
 	// test_builtin_unset(&prmtrs);						// leaks OK
 	// test_sort_unset(&prmtrs);						// leaks OK
-
-	//	My notes:::
-	//	cd		OK.	N.	fd no. 	But queastion with return value
-	//	echo	OK.	N.	fd yes. fd done +
-	//	env		OK.	N.	fd yes. fd done +
-	//	export	OK.	N.	fd yes. fd done	+
-	//	pwd 	OK.	N.	fd yes. fd done +
-	//	unset	OK.	N.	fd no.
-	//	exit
 
 	printf("\n-------------------\nEverything normal 1\n");
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
