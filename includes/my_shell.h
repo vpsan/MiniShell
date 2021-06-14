@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/12 12:26:32 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/14 17:59:19 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void		updatevalue_env_lst(char *name, char *malloced_new_value,
 				t_env_list **env_head);
 char		**env_split(char const *s);
 int			check_env_name_exists(char *name, t_env_list *env_head);
+char		**env_create_arr(t_env_list *env_head);
 
 /*
 **	BUILTINS:
@@ -67,6 +68,12 @@ int			builtin_cd(char **cmnd_words, t_env_list *env_head);
 int			builtin_echo(char **cmnd_words, int out_fd);
 
 /*
+**	EXECUTE_EXECVE:
+*/
+
+int     	execute_execve(t_main *prmtrs);
+
+/*
 **	TESTERS
 **	FOR ENV:
 */
@@ -75,6 +82,7 @@ void		test_env_split(void);
 void		test_env_lstsort_bubble(t_main *prmtrs);
 void		test_printf_all_env_lst(t_env_list *env_head);
 void		test_updatevalue_env_lst(t_main *prmtrs);
+void		test_env_create_arr(t_main *prmtrs);
 
 /*
 **	TESTERS

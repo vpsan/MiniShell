@@ -6,7 +6,7 @@
 #    By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/08 17:52:23 by bhatches          #+#    #+#              #
-#    Updated: 2021/06/12 11:03:08 by bhatches         ###   ########.fr        #
+#    Updated: 2021/06/14 17:58:05 by bhatches         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,17 +120,10 @@ PRSNG_VLDTN			=	$(PRSNG_VLDTN_DIR)prsng_vldtn.c\
 MY_SHELL_DIR		= 	srcs/my_shell/
 BUILTINS_DIR		=	$(MY_SHELL_DIR)builtins/
 ENV					=	$(MY_SHELL_DIR)env/
+EXECUTE_EXECVE		=	$(MY_SHELL_DIR)execute_execve/
 TESTERS				=	$(MY_SHELL_DIR)testers/
 
 MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
-						\
-                        $(BUILTINS_DIR)builtin_env.c\
-                        $(BUILTINS_DIR)builtin_unset.c\
-                        $(BUILTINS_DIR)builtin_export.c\
-						$(BUILTINS_DIR)builtin_pwd.c\
-						$(BUILTINS_DIR)builtin_echo.c\
-						$(BUILTINS_DIR)builtin_cd.c\
-						$(BUILTINS_DIR)builtin_exit.c\
 						\
 						$(ENV)create_env_lst.c\
 						$(ENV)env_lstsort_bubble.c\
@@ -147,17 +140,29 @@ MY_SHELL			= 	$(MY_SHELL_DIR)my_shell.c\
                         $(ENV)updatevalue_env_lst.c\
                         $(ENV)env_split.c\
                         $(ENV)check_env_name_exists.c\
+                        $(ENV)env_create_arr.c\
+						\
+                        $(BUILTINS_DIR)builtin_env.c\
+                        $(BUILTINS_DIR)builtin_unset.c\
+                        $(BUILTINS_DIR)builtin_export.c\
+						$(BUILTINS_DIR)builtin_pwd.c\
+						$(BUILTINS_DIR)builtin_echo.c\
+						$(BUILTINS_DIR)builtin_cd.c\
+						$(BUILTINS_DIR)builtin_exit.c\
+                        \
+                        $(EXECUTE_EXECVE)execute_execve.c\
                         \
 						$(TESTERS)test_env_lstsort_bubble.c\
                         $(TESTERS)test_printf_all_env_lst.c\
                         $(TESTERS)test_updatevalue_env_lst.c\
+                        $(TESTERS)test_env_create_arr.c\
                         $(TESTERS)test_env_split.c\
                         $(TESTERS)test_builtin_env.c\
                         $(TESTERS)test_builtin_unset.c\
+                        $(TESTERS)test_sort_unset.c\
                         $(TESTERS)test_builtin_export.c\
                         $(TESTERS)test_builtin_cd.c\
                         $(TESTERS)test_builtin_echo.c\
-                        $(TESTERS)test_sort_unset.c\
 
 # ***************************************************************************** #
 

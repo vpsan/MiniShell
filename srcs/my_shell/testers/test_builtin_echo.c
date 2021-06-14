@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 18:30:45 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/09 19:40:21 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/14 18:04:44 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void 		test_builtin_echo(void)
 	char **cmnd_words;
 	cmnd_words = (char **)malloc(sizeof(char *) * 5);
 
-//	// example 0
-//	cmnd_words[0] = ft_strdup("echo\0");
-//	cmnd_words[1] = ft_strdup("-nnnn\0");
-//	cmnd_words[2] = NULL;
-//	cmnd_words[3] = NULL;
-//	cmnd_words[4] = NULL;
+	// example 0
+	cmnd_words[0] = ft_strdup("echo\0");
+	cmnd_words[1] = ft_strdup("-nnnn\0");
+	cmnd_words[2] = NULL;
+	cmnd_words[3] = NULL;
+	cmnd_words[4] = NULL;
 
 //	// example 1
 //	cmnd_words[0] = ft_strdup("echo\0");
