@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/12 11:12:14 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/14 13:54:22 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,18 @@
 #include <stdbool.h>
 #include <stdio.h>
 
+void	putstr_greeting(void)
+{
+	ft_putstr_fd("                             __         ____\n", 1);
+	ft_putstr_fd("    ____ ___  __  __   _____/ /_  _____/ / / \n", 1);
+	ft_putstr_fd("   / __ `__ \\/ / / /  / ___/ __ \\/ ___/ / /\n", 1);
+	ft_putstr_fd("  / / / / / / /_/ /  (__  ) / / / ___/ / /\n", 1);
+	ft_putstr_fd(" /_/ /_/ /_/\\__, /  /____/_/ /_/____/_/_/\n", 1);
+	ft_putstr_fd("           /____/                         ....is now available for you!\n", 1);
+	ft_putstr_fd("\n\n\n", 1);
+	return ;
+}
+
 int	main(int argc, char **argv, char **env)
 {
 	t_main	prmtrs;
@@ -25,8 +37,8 @@ int	main(int argc, char **argv, char **env)
 	if (argc > 1)
 		return (1);
 	(void)argv;
+	putstr_greeting();
 	create_env_lst(&prmtrs, env);
-
 
 	// TESTERS t_env_list:
 	// test_env_split();								// leaks OK
@@ -54,6 +66,6 @@ int	main(int argc, char **argv, char **env)
 	printf("\n-------------------\nEverything normal 1\n");
 	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
 	printf("-------------------\nEverything normal 2\n-------------------\n");
-	sleep(10);
+	// sleep(10);
 	return (0);
 }
