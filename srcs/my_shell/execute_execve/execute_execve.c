@@ -28,6 +28,15 @@ int     execute_execve(t_main *prmtrs)
     //     path_arr++;
     // }
 
+	// example 0
+	char **cmnd_words;
+	cmnd_words = (char **)malloc(sizeof(char *) * 5);
+	cmnd_words[0] = ft_strdup("ls\0");
+	cmnd_words[1] = ft_strdup("..\0");
+	cmnd_words[2] = NULL;
+	cmnd_words[3] = NULL;
+	cmnd_words[4] = NULL;
+
     char    argv[3] = "ls\0";
     char    *tmp;
     char    *final;
@@ -35,8 +44,7 @@ int     execute_execve(t_main *prmtrs)
     {
         tmp = ft_strjoin(*path_arr, "/");
         final = ft_strjoin(tmp, argv);
-//        if (ft_strcmp(final, "/bin/ls") == 0)
-//            execve(final, NULL, env);
+        execve(final, cmnd_words, env);
         printf("%s\n", final);
         path_arr++;
     }
