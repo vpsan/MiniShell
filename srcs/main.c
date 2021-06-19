@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/14 19:05:14 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/19 11:56:24 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	putstr_greeting(void)
 	ft_putstr_fd("   / __ `__ \\/ / / /  / ___/ __ \\/ ___/ / /\n", 1);
 	ft_putstr_fd("  / / / / / / /_/ /  (__  ) / / / ___/ / /\n", 1);
 	ft_putstr_fd(" /_/ /_/ /_/\\__, /  /____/_/ /_/____/_/_/\n", 1);
-	ft_putstr_fd("           /____/                         ....is now available for you!\n\n", 1);
+	ft_putstr_fd("           /____/                         ....is now", 1);
+	ft_putstr_fd(" available for you!\n\n", 1);
 	ft_putstr_fd("\n\n\n", 1);
 	ft_putstr_fd("\033[0m", 1);
 	return ;

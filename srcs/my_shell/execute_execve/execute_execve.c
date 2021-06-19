@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 17:54:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/14 20:26:46 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/19 11:59:45 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@ int     execute_execve(t_main *prmtrs)
     env = env_create_arr(prmtrs->env_head);
     paths = getvalue_env_lst("PATH", prmtrs->env_head);
     path_arr = ft_split(paths, ':');
-
-    // while (*path_arr != NULL)
-    // {
-    //     printf("%s\n", *path_arr);
-    //     path_arr++;
-    // }
 
 	// example 0
 	char **cmnd_words;
@@ -44,9 +38,12 @@ int     execute_execve(t_main *prmtrs)
     {
         tmp = ft_strjoin(*path_arr, "/");
         final = ft_strjoin(tmp, argv);
+		printf("%s\n", final);
         execve(final, cmnd_words, env);
-        printf("%s\n", final);
         path_arr++;
     }
+	// end of example 0
+	
+	ft_free_str_arr(&env);
     return (0);
 }
