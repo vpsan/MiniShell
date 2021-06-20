@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/07 16:03:58 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/12 11:05:55 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/19 13:24:26 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,16 @@ void	unset_delete_lst_element(char *s, t_env_list **env_head)
 	first_iter = 0;
 	while (tmp != NULL)
 	{
-		if (ft_strcmp(s, tmp->env_arr[0]) == 0)
+		if (ft_strcmp(s, tmp->env_arr[0]) == 0) // если нашли нужный элемент
 		{
-			if (first_iter == 0)
+			if (first_iter == 0) // если нужно удалить первый элемент, то удаляем его, создавая новый элемент из следующего и меняем адрес листа env_head
 			{
 				*env_head = creat_env_head_copy(tmp->next);
 				env_lstdelone(tmp->next, ft_free_str_arr);
 			}
-			else
+			else // если это не первый элемент - просто сдвигаем указатели, пропуская лист, который нужно удалить
 				previous->next = tmp->next;
-			env_lstdelone(tmp, ft_free_str_arr);
+			env_lstdelone(tmp, ft_free_str_arr); // удаляем нужный лист
 			break ;
 		}
 		previous = tmp;
@@ -96,17 +96,17 @@ int	builtin_unset(char **cmnd_words, t_env_list **env_head)
 	int	i;
 
 	i = 1;
-	while (cmnd_words[i] != NULL)
+	while (cmnd_words[i] != NULL) // если есть хотя бы первый аргумент, то есть строчка состоит не только из слова unset, а из (unset первый_аргумент второй_аргумент ...) 
 	{
-		if (check_word(cmnd_words[i]) == ERROR)
+		if (check_word(cmnd_words[i]) == ERROR) // если такой аргмуент нельзя удалить, то выводи ошибки
 		{
 			ft_putstr_fd("my_shell: unset: '", 2);
 			ft_putstr_fd(cmnd_words[i], 2);
 			ft_putstr_fd("': not a valid identifier\n", 2);
-			// ТУТ У ПАРНЕЙ ОБЫЧНО EXIT_SATUS прописывается
+			// ТУТ У ПАРНЕЙ ОБЫЧНО EXIT_SATUS прописывается или можно вернуть ошибку
 		}
 		else
-			unset_delete_lst_element(cmnd_words[i], env_head);
+			unset_delete_lst_element(cmnd_words[i], env_head); // удаляем элемент из листа
 		i++;
 	}
 	return (0);

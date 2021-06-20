@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 17:29:03 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/19 11:56:24 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/19 13:39:25 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	putstr_greeting(void)
 {
-	ft_putstr_fd("\033[0;33m", 1);
+	ft_putstr_fd("\033[0;33m", 1);// Начинаем красить желтым цветом.
 	ft_putstr_fd("                             __         ____\n", 1);
 	ft_putstr_fd("    ____ ___  __  __   _____/ /_  _____/ / / \n", 1);
 	ft_putstr_fd("   / __ `__ \\/ / / /  / ___/ __ \\/ ___/ / /\n", 1);
@@ -29,7 +29,7 @@ void	putstr_greeting(void)
 	ft_putstr_fd("           /____/                         ....is now", 1);
 	ft_putstr_fd(" available for you!\n\n", 1);
 	ft_putstr_fd("\n\n\n", 1);
-	ft_putstr_fd("\033[0m", 1);
+	ft_putstr_fd("\033[0m", 1);// Заканчиваем красить желтым цветом.
 	return ;
 }
 
@@ -40,8 +40,8 @@ int	main(int argc, char **argv, char **env)
 	if (argc > 1)
 		return (1);
 	(void)argv;
-	putstr_greeting();
-	create_env_lst(&prmtrs, env);
+	putstr_greeting(); // Выводим привествие 
+	create_env_lst(&prmtrs, env); // Из двумерного массива (env) делаем список (prmtrs.env_head)
 
 	// // TESTERS t_env_list:
 	// printf("\n---------------------------------------------------------------------- TEST 0.1\n");
@@ -74,7 +74,7 @@ int	main(int argc, char **argv, char **env)
 	execute_execve(&prmtrs);
 
 	printf("\n-------------------\nEverything normal 1\n");
-	env_lstclear(&prmtrs.env_head, ft_free_str_arr);
+	env_lstclear(&prmtrs.env_head, ft_free_str_arr); // Чистим лист (prmtrs.env_head) функцией ft_free_str_arr.
 	printf("-------------------\nEverything normal 2\n-------------------\n");
 	// sleep(10);
 	return (0);

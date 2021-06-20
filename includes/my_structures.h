@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_structures.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhatches <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 12:30:27 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/12 12:30:30 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/06/19 14:05:29 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ typedef struct			s_shell
 
 typedef struct			s_env_list
 {
-	char				**env_arr;
-	int					declare_flag;
+	char				**env_arr;//name=value; env_arr[0] -> name.  env_arr[1] -> value. 
+	int					declare_flag; // declare_flag = 1 если value существует.
 	struct s_env_list	*next;
 }						t_env_list;
 
