@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 16:55:52 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/14 17:59:19 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/09/17 01:49:31 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,8 @@
 # include <string.h>
 # include <errno.h>
 # include <stdbool.h>
-
-# define ERROR -1
-
-/*
-**	MAIN MY_SHELL FUNCTION:
-*/
-
-int			my_shell(t_main *prtmtrs);
+# include <unistd.h>
+# include <stdlib.h>
 
 /*
 **	ENV:
@@ -53,49 +47,51 @@ int			check_env_name_exists(char *name, t_env_list *env_head);
 char		**env_create_arr(t_env_list *env_head);
 
 /*
+**	MAIN MY_SHELL FUNCTION:
+*/
+
+int			my_shell(t_main *prtmtrs);
+
+/*
+**	SHELL MANAGER:
+*/
+
+int			my_shell_execute(t_cmd_list *cmd_i, t_main *prmts);
+int			pipe_execve_or_builtins(t_cmd_list *cmd_i, t_main *prmts);
+int			redirect_cmd_fd(t_cmd_list *cmd_i);
+int			create_pipe(t_cmd_list *cmd_i, t_main *prmts);
+
+int			free_cmd_list(t_main *prmtrs, int return_value);
+int			free_prmtrs(t_main *prmtrs, int return_value);
+
+/*
 **	BUILTINS:
 */
 
-int			builtin_env(t_env_list *env_head, int out_fd);
-int			builtin_unset(char **cmnd_words, t_env_list **env_head);
+int			builtin_env(char **cmnd_words, t_env_list *env_head,
+				int fd_out, t_main *prmtrs);
+int			builtin_unset(char **cmnd_words, t_env_list **env_head,
+				t_main *prmtrs);
 void		unset_delete_lst_element(char *s, t_env_list **env_head);
 int			builtin_export(char **cmnd_words, t_env_list **env_head,
-				int out_fd);
-int			print_export_declare_x(t_env_list *env_head, int out_fd);
-int			builtin_pwd(int out_fd);
-int			builtin_exit(char **cmnd_words);
-int			builtin_cd(char **cmnd_words, t_env_list *env_head);
-int			builtin_echo(char **cmnd_words, int out_fd);
+				int fd_out);
+int			print_export_declare_x(t_env_list *env_head, int fd_out);
+int			builtin_pwd(int fd_out, t_main *prmtrs);
+int			builtin_exit(char **cmnd_words, t_main *prmtrs);
+int			builtin_cd(char **cmnd_words, t_env_list *env_head, t_main *prmtrs);
+int			builtin_echo(char **cmnd_words, int fd_out);
+int			builtins(t_cmd_list *cmd_i, t_main *prmtrs);
 
 /*
 **	EXECUTE_EXECVE:
 */
 
-int     	execute_execve(t_main *prmtrs);
+int			execute_execve(t_cmd_list *cmd_i, t_main *prmtrs);
 
 /*
-**	TESTERS
-**	FOR ENV:
+**	definition for readline:
 */
 
-void		test_env_split(void);
-void		test_env_lstsort_bubble(t_main *prmtrs);
-void		test_printf_all_env_lst(t_env_list *env_head);
-void		test_updatevalue_env_lst(t_main *prmtrs);
-void		test_env_create_arr(t_main *prmtrs);
-
-/*
-**	TESTERS
-**	FOR BUILTINS:
-*/
-
-void		test_builtin_env(t_main *prmtrs);
-void		test_builtin_pwd(t_main prmtrs);
-void		test_builtin_unset(t_main *prmtrs);
-void		test_sort_unset(t_main *prmtrs);
-void		test_builtin_export_without_arguments(t_main *prmtrs);
-void		test_builtin_export_with_arguments(t_main *prmtrs);
-void		test_builtin_cd(t_main *prmtrs);
-void		test_builtin_echo(void);
+void		rl_replace_line(const char *s, int n);
 
 #endif

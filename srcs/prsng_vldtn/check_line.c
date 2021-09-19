@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_shell.c                                         :+:      :+:    :+:   */
+/*   check_line.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/09/17 01:28:37 by bhatches         ###   ########.fr       */
+/*   Created: 2021/09/17 11:34:38 by bhatches          #+#    #+#             */
+/*   Updated: 2021/09/17 11:34:39 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_shell.h"
+#include "prsng_vldtn.h"
 
-int	my_shell(t_main *prmtrs)
+int	check_line(char *line)
 {
-	t_cmd_list	*cmd_i;
+	int	i;
 
-	cmd_i = prmtrs->cmd_head;
-	prmtrs->fd_output = dup(0);
-	while (cmd_i->next != NULL)
+	i = -1;
+	while (line[++i])
 	{
-		create_pipe(cmd_i, prmtrs);
-		cmd_i = cmd_i->next;
+		if (ft_isascii(line[i]) && !ft_isspace(line[i]))
+			return (EXECUTE);
 	}
-	my_shell_execute(cmd_i, prmtrs);
-	dup2(prmtrs->fd_output, 0);
-	free_prmtrs(prmtrs, DONT_CLEAN_ENV);
-	while (wait(NULL) > 0)
-		;
-	return (0);
+	return (NOT_EXECUTE);
 }

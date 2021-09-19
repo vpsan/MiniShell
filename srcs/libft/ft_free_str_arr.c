@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 18:35:25 by bhatches          #+#    #+#             */
-/*   Updated: 2021/06/06 14:24:07 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/09/16 10:43:42 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	*ft_free_str_arr(char ***arr)
 			}
 			i++;
 		}
-		free(*arr);
+		if (*arr != NULL)
+			free(*arr);
 		*arr = NULL;
 	}
 	return (NULL);

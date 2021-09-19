@@ -6,7 +6,7 @@
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/16 17:19:49 by bhatches          #+#    #+#             */
-/*   Updated: 2021/04/19 13:54:44 by bhatches         ###   ########.fr       */
+/*   Updated: 2021/09/16 10:34:15 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *str)
 	size_t	i;
 
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (*str != '\0')
 	{
 		i = i + 1;

@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_shell.c                                         :+:      :+:    :+:   */
+/*   al_num.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/09/17 01:28:37 by bhatches         ###   ########.fr       */
+/*   Created: 2021/09/16 09:53:01 by bhatches          #+#    #+#             */
+/*   Updated: 2021/09/16 09:53:02 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_shell.h"
+#include "prsng_vldtn.h"
 
-int	my_shell(t_main *prmtrs)
+int	al_num(t_cmd_list **tmp, int i, int ind)
 {
-	t_cmd_list	*cmd_i;
+	int	j;
 
-	cmd_i = prmtrs->cmd_head;
-	prmtrs->fd_output = dup(0);
-	while (cmd_i->next != NULL)
-	{
-		create_pipe(cmd_i, prmtrs);
-		cmd_i = cmd_i->next;
-	}
-	my_shell_execute(cmd_i, prmtrs);
-	dup2(prmtrs->fd_output, 0);
-	free_prmtrs(prmtrs, DONT_CLEAN_ENV);
-	while (wait(NULL) > 0)
-		;
-	return (0);
+	j = -1;
+	find_builtin((*tmp), i);
+	while ((*tmp)->orig_cmnd_str[i] && !ft_isspace((*tmp)->orig_cmnd_str[i]))
+		(*tmp)->cmnd_words[ind][++j] = (*tmp)->orig_cmnd_str[i++];
+	return (i);
 }

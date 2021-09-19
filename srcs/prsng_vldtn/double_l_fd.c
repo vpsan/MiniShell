@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_shell.c                                         :+:      :+:    :+:   */
+/*   double_l_fd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/09/17 01:28:37 by bhatches         ###   ########.fr       */
+/*   Created: 2021/09/16 09:54:22 by bhatches          #+#    #+#             */
+/*   Updated: 2021/09/16 09:54:23 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_shell.h"
+#include "prsng_vldtn.h"
 
-int	my_shell(t_main *prmtrs)
+int	double_l_fd(t_cmd_list *tmp)
 {
-	t_cmd_list	*cmd_i;
+	char	*line;
+	int		fd;
 
-	cmd_i = prmtrs->cmd_head;
-	prmtrs->fd_output = dup(0);
-	while (cmd_i->next != NULL)
+	fd = open(".tmp", O_CREAT | O_WRONLY | O_TRUNC, S_IRWXU);
+	line = readline("> ");
+	while (ft_strcmp(line, tmp->after_redirect))
 	{
-		create_pipe(cmd_i, prmtrs);
-		cmd_i = cmd_i->next;
+		write(fd, line, ft_strlen(line));
+		write(fd, "\n", 1);
+		ft_free_str(&line);
+		line = readline("> ");
 	}
-	my_shell_execute(cmd_i, prmtrs);
-	dup2(prmtrs->fd_output, 0);
-	free_prmtrs(prmtrs, DONT_CLEAN_ENV);
-	while (wait(NULL) > 0)
-		;
-	return (0);
+	ft_free_str(&line);
+	close(fd);
+	tmp->fd_out = open(".tmp", O_RDONLY);
+	return (EXECUTE);
 }

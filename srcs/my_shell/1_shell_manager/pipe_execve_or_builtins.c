@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_shell.c                                         :+:      :+:    :+:   */
+/*   pipe_execve_or_builtins.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/09/17 01:28:37 by bhatches         ###   ########.fr       */
+/*   Created: 2021/09/05 11:18:24 by bhatches          #+#    #+#             */
+/*   Updated: 2021/09/16 23:04:40 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-int	my_shell(t_main *prmtrs)
+int	pipe_execve_or_builtins(t_cmd_list *cmd_i, t_main *prmts)
 {
-	t_cmd_list	*cmd_i;
+	pid_t	pid;
 
-	cmd_i = prmtrs->cmd_head;
-	prmtrs->fd_output = dup(0);
-	while (cmd_i->next != NULL)
+	pid = fork();
+	if (pid == -1)
 	{
-		create_pipe(cmd_i, prmtrs);
-		cmd_i = cmd_i->next;
+		exit(free_prmtrs(prmts, ERROR));
 	}
-	my_shell_execute(cmd_i, prmtrs);
-	dup2(prmtrs->fd_output, 0);
-	free_prmtrs(prmtrs, DONT_CLEAN_ENV);
-	while (wait(NULL) > 0)
-		;
+	else if (pid == 0)
+	{
+		redirect_cmd_fd(cmd_i);
+		execute_execve(cmd_i, prmts);
+		free_prmtrs(prmts, 0);
+	}
+	else
+	{
+		waitpid(pid, &(prmts->exit_status), 0);
+		prmts->exit_status = WEXITSTATUS(prmts->exit_status);
+	}
 	return (0);
 }

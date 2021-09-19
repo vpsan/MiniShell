@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_shell.c                                         :+:      :+:    :+:   */
+/*   setup_shell_terminal.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/09/17 01:28:37 by bhatches         ###   ########.fr       */
+/*   Created: 2021/09/16 09:55:36 by bhatches          #+#    #+#             */
+/*   Updated: 2021/09/16 09:55:37 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "my_shell.h"
+#include "prsng_vldtn.h"
 
-int	my_shell(t_main *prmtrs)
+int	setup_terminal(void)
 {
-	t_cmd_list	*cmd_i;
+	struct termios	term;
 
-	cmd_i = prmtrs->cmd_head;
-	prmtrs->fd_output = dup(0);
-	while (cmd_i->next != NULL)
-	{
-		create_pipe(cmd_i, prmtrs);
-		cmd_i = cmd_i->next;
-	}
-	my_shell_execute(cmd_i, prmtrs);
-	dup2(prmtrs->fd_output, 0);
-	free_prmtrs(prmtrs, DONT_CLEAN_ENV);
-	while (wait(NULL) > 0)
-		;
+	signal(SIGQUIT, SIG_IGN);
+	signal(SIGINT, &sigint_handler);
+	if (tcgetattr(0, &term) != 0)
+		return (1);
+	term.c_lflag &= ~ECHOCTL;
+	if (tcsetattr(0, TCSANOW, &term) != 0)
+		return (1);
 	return (0);
 }

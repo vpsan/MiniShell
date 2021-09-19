@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   my_shell.c                                         :+:      :+:    :+:   */
+/*   builtin_pwd.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhatches <bhatches@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/29 14:32:15 by bhatches          #+#    #+#             */
-/*   Updated: 2021/09/17 01:28:37 by bhatches         ###   ########.fr       */
+/*   Created: 2021/06/07 15:40:18 by bhatches          #+#    #+#             */
+/*   Updated: 2021/09/16 23:49:31 by bhatches         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "my_shell.h"
 
-int	my_shell(t_main *prmtrs)
+int	builtin_pwd(int fd_out, t_main *prmtrs)
 {
-	t_cmd_list	*cmd_i;
+	char	*pwd_str;
 
-	cmd_i = prmtrs->cmd_head;
-	prmtrs->fd_output = dup(0);
-	while (cmd_i->next != NULL)
+	pwd_str = getcwd(NULL, 0);
+	if (pwd_str == NULL)
 	{
-		create_pipe(cmd_i, prmtrs);
-		cmd_i = cmd_i->next;
+		ft_putstr_fd("error retrieving current directory: getcwd: cannot \
+				access parent directories: No such file or directory", 2);
+		ft_putendl_fd(strerror(errno), 2);
+		prmtrs->exit_status = 1;
+		return (ERROR);
 	}
-	my_shell_execute(cmd_i, prmtrs);
-	dup2(prmtrs->fd_output, 0);
-	free_prmtrs(prmtrs, DONT_CLEAN_ENV);
-	while (wait(NULL) > 0)
-		;
+	ft_putendl_fd(pwd_str, fd_out);
+	free(pwd_str);
 	return (0);
 }
